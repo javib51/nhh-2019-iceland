@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello_world/example_stateful.dart';
 
 void main() => runApp(MyApp());
 
@@ -71,8 +72,13 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
         leading: new IconButton(
-          icon: new Icon(Icons.accessibility),
-          onPressed: () => {},
+          icon: new Icon(Icons.album),
+          onPressed: () => {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ExampleStateful("Second View")))
+          },
         ),
         actions: <Widget>[
           new IconButton(
