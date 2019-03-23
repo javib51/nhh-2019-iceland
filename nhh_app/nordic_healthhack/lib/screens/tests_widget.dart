@@ -1,5 +1,7 @@
 
 import 'package:flutter/material.dart';
+import 'package:responsive_container/responsive_container.dart';
+import 'package:nordic_healthhack/screens/medical_profile_widget.dart';
 
 
 class TestsWidget extends StatelessWidget {
@@ -16,22 +18,26 @@ class TestsWidget extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Container(
-              margin: EdgeInsets.only(left: 80, top: 124, right: 81),
-              child: Text(
-                "Welcome!",
-                style: TextStyle(
-                  color: Color.fromARGB(255, 75, 74, 75),
-                  fontSize: 44,
-                  fontFamily: "Lato",
+            ResponsiveContainer(
+              heightPercent: 30.0, //value percent of screen total height
+              widthPercent: 45.0,  //value percent of screen total width
+              child: Container(
+                alignment: Alignment.bottomCenter,
+                child: Text(
+                  "Welcome!",
+                  style: TextStyle(
+                    color: Color.fromARGB(255, 75, 74, 75),
+                    fontSize: MediaQuery.of(context).size.height/15,
+                    fontFamily: "Lato",
+                  ),
+                  textAlign: TextAlign.center,
                 ),
-                textAlign: TextAlign.center,
-              ),
+              )
             ),
             Container(
-              alignment: Alignment.topCenter,
+              height: MediaQuery.of(context).size.height/5,
+              alignment: Alignment.bottomCenter,
               child: Container(
-                margin: EdgeInsets.only(top: 72),
                 child: Image.asset(
                   "assets/images/icon.png",
                   fit: BoxFit.none,
@@ -39,144 +45,76 @@ class TestsWidget extends StatelessWidget {
               ),
             ),
             Container(
-              alignment: Alignment.topCenter,
+              height: MediaQuery.of(context).size.height/20,
+              alignment: Alignment.bottomCenter,
               child: Container(
-                margin: EdgeInsets.only(top: 16),
                 child: Text(
                   "Login with your fingerprint ",
                   style: TextStyle(
                     color: Color.fromARGB(255, 75, 74, 75),
-                    fontSize: 15,
+                    fontSize: MediaQuery.of(context).size.height/50,
                     fontFamily: "Open Sans",
                   ),
                   textAlign: TextAlign.center,
                 ),
               ),
             ),
-            Expanded(
-              flex: 1,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
+            Container(
+              height: MediaQuery.of(context).size.height/3,
+              alignment: Alignment.bottomCenter,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Container(
-                    alignment: Alignment.topCenter,
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => MedicalProfileWidget()),
+                      );
+                    },
                     child: Container(
-                      margin: EdgeInsets.only(bottom: 3),
-                      child: Text(
-                        "Sign-up with",
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 75, 74, 75),
-                          fontSize: 16,
-                          fontFamily: "Open Sans",
-                          fontWeight: FontWeight.w700,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    flex: 1,
-                    child: Stack(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.end,
+                        width: MediaQuery.of(context).size.height/6,
+                        height: MediaQuery.of(context).size.height/10,
+                        color: Color.fromARGB(255, 135, 221, 167),
+                        child: Column(
                           children: [
                             Container(
-                              width: 158,
-                              height: 73,
-                              margin: EdgeInsets.only(bottom: 28),
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                  color: Color.fromARGB(255, 135, 221, 167),
-                                  width: 1,
+                              height: MediaQuery.of(context).size.height/30,
+                              alignment: Alignment.bottomCenter,
+                              child: Text(
+                                "Sign-up with",
+                                style: TextStyle(
+                                  color: Color.fromARGB(255, 0, 0, 0),
+                                  fontSize: MediaQuery.of(context).size.height/45,
+                                  fontFamily: "Open Sans",
+                                  fontWeight: FontWeight.w700,
                                 ),
+                                textAlign: TextAlign.center,
                               ),
                             ),
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
                             Container(
-                              margin: EdgeInsets.only(bottom: 33),
+                              height: MediaQuery.of(context).size.height/17.5,
+                              alignment: Alignment.bottomCenter,
                               child: Image.asset(
                                 "assets/images/bitmap-2.png",
                                 fit: BoxFit.none,
                               ),
                             ),
                           ],
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    constraints: BoxConstraints.expand(height: 48),
-                    decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 0, 0, 0),
-                    ),
-                    child: Stack(
-                      fit: StackFit.expand,
-                      children: [
-                        Row(
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: [
-                            Container(
-                              alignment: Alignment.centerLeft,
-                              child: Container(
-                                margin: EdgeInsets.only(left: 71),
-                                child: Image.asset(
-                                  "assets/images/back-4.png",
-                                  fit: BoxFit.none,
-                                ),
-                              ),
-                            ),
-                            Expanded(
-                              flex: 1,
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  Container(
-                                    width: 16,
-                                    height: 16,
-                                    margin: EdgeInsets.only(right: 71),
-                                    decoration: BoxDecoration(
-                                      border: Border.all(
-                                        color: Color.fromARGB(255, 255, 255, 255),
-                                        width: 2,
-                                      ),
-                                      borderRadius: BorderRadius.all(Radius.circular(2)),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Container(
-                              width: 16,
-                              height: 16,
-                              decoration: BoxDecoration(
-                                border: Border.all(
-                                  color: Color.fromARGB(255, 255, 255, 255),
-                                  width: 2,
-                                ),
-                                borderRadius: BorderRadius.all(Radius.circular(8)),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
+                        )
                     ),
                   ),
                 ],
               ),
-            ),
+            )
+//            Container(
+//              margin: EdgeInsets.only(bottom: 33),
+//              child: Image.asset(
+//                "assets/images/bitmap-2.png",
+//                fit: BoxFit.none,
+//              ),
+//            ),
           ],
         ),
       ),

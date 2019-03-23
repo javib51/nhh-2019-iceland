@@ -7,6 +7,7 @@ import 'package:nordic_healthhack/screens/check_up2_widget.dart';
 import 'package:nordic_healthhack/screens/check_ups_two_widget.dart';
 import 'package:nordic_healthhack/screens/check_ups_widget.dart';
 import 'package:nordic_healthhack/screens/medical_profile_widget.dart';
+import 'package:nordic_healthhack/screens/tests_widget.dart';
 
 void main() => runApp(App());
 
@@ -17,7 +18,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
   
     return MaterialApp(
-      home: MedicalProfileWidget(),
+      home: TestsWidget(),
     );
   }
 }
