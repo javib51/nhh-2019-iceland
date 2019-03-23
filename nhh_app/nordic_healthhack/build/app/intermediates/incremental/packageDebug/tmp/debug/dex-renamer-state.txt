@@ -1,4 +1,4 @@
-#Sat Mar 23 22:52:59 GMT 2019
-base.0=/Users/waliyah/Documents/GitHub/nhh-2019-iceland/nhh_app/nordic_healthhack/build/app/intermediates/transforms/dexMerger/debug/0
+#Sat Mar 23 21:42:00 GMT 2019
+base.0=/home/jbf/workspace/eit-aalto/nhh-2019-iceland/nhh_app/nordic_healthhack/build/app/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex

@@ -370,7 +370,7 @@ class PrecriptionMainWidget extends StatelessWidget {
                                       crossAxisAlignment: CrossAxisAlignment.stretch,
                                       children: [
                                         Container(
-                                          margin: EdgeInsets.symmetric(vertical: 8.0),
+                                          margin: EdgeInsets.symmetric(horizontal: 33),
                                           child: Text(
                                             "View",
                                             style: TextStyle(
@@ -500,7 +500,7 @@ class PrecriptionMainWidget extends StatelessWidget {
                                             crossAxisAlignment: CrossAxisAlignment.stretch,
                                             children: [
                                               Container(
-                                                margin: EdgeInsets.symmetric(vertical: 8.0),
+                                                margin: EdgeInsets.symmetric(horizontal: 33),
                                                 child: Text(
                                                   "View",
                                                   style: TextStyle(
