@@ -3,6 +3,7 @@ import 'dart:async';
 
 import 'package:flutter/services.dart';
 import 'package:nhh_apis/nhh_apis.dart';
+import 'package:nhh_apis/arion/arion.dart';
 
 void main() => runApp(MyApp());
 
@@ -18,6 +19,13 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
     initPlatformState();
+    ArionAPI arion = ArionAPI();
+    arion.getCards().then((res) {
+      print(res);
+      arion.getTransactions(res[0].cardId).then((res) {
+        print(res);
+      });
+    });
   }
 
   // Platform messages are asynchronous, so we initialize in an async method.

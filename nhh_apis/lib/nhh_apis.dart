@@ -10,4 +10,5 @@ class NhhApis {
     final String version = await _channel.invokeMethod('getPlatformVersion');
     return version;
   }
+
 }

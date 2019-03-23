@@ -1,0 +1,4 @@
+javib51.github.com.nhh_apis_example
+drawable launch_background
+mipmap ic_launcher
+style LaunchTheme
