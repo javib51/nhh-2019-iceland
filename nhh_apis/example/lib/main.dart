@@ -7,6 +7,7 @@ import 'package:nhh_apis/arion/arion.dart';
 import 'package:nhh_apis/digime/services/digime_activity_service.dart';
 import 'package:nhh_apis/digime/services/digime_dailyactivity_service.dart';
 import 'package:nhh_apis/digime/services/digime_sleep_service.dart';
+import 'package:nhh_apis/health_api/health_api.dart';
 
 void main() => runApp(MyApp());
 
@@ -23,6 +24,10 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
     initPlatformState();
+
+    getAllHealth().then((res) {
+      print(res);
+    });
 
     ArionAPI arion = ArionAPI();
     arion.getCards().then((res) {
