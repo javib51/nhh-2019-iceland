@@ -4,6 +4,9 @@ import 'dart:async';
 import 'package:flutter/services.dart';
 import 'package:nhh_apis/nhh_apis.dart';
 import 'package:nhh_apis/arion/arion.dart';
+import 'package:nhh_apis/digime/services/digime_activity_service.dart';
+import 'package:nhh_apis/digime/services/digime_dailyactivity_service.dart';
+import 'package:nhh_apis/digime/services/digime_sleep_service.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,17 +17,24 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   String _platformVersion = 'Unknown';
+  int calories;
 
   @override
   void initState() {
     super.initState();
     initPlatformState();
+
     ArionAPI arion = ArionAPI();
     arion.getCards().then((res) {
       print(res);
       arion.getTransactions(res[0].cardId).then((res) {
         print(res);
       });
+    });
+
+    loadDailyActivity().then((res){
+      print(res.fileData[0].caloriesbmr);
+      calories = res.fileData[0].caloriesbmr;
     });
   }
 
@@ -56,7 +66,7 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: Center(
-          child: Text('Running on: $_platformVersion\n'),
+          child: Text(calories.toString()),
         ),
       ),
     );
