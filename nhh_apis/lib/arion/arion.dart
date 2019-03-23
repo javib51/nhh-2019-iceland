@@ -19,23 +19,24 @@ class ArionAPI {
     this.serverKey = (serverKey != null) ? serverKey : arionServerKeyStatic;
   }
 
-  Future<List<CreditCard>> getCards() async {
+  Future<CreditCards> getCards() async {
     http.Response resp = await http.get(arionHost + arionCreditCard, headers: {
       "Authorization": "Bearer " + token,
       "Ocp-Apim-Subscription-Key": serverKey
     });
 
     if (resp.statusCode == 200) {
-      Map res = json.decode(resp.body);
+      /*Map res = json.decode(resp.body);
       List<CreditCard> result = new List();
       res['creditCard'].forEach((value) => result.add(CreditCard.fromJson(value)));
-      return result;
+      return result;*/
+      return CreditCards.fromJson(json.decode(resp.body));
     } else {
       throw Exception('It fails. fuck you!');
     }
   }
 
-  Future<List<Transaction>> getTransactions(int creditCard) async {
+  Future<Transactions> getTransactions(int creditCard) async {
     final String url = arionHost + arionCreditCard + '/' + creditCard.toString() + arionTransactions;
     http.Response resp = await http.get(url, headers: {
       "Authorization": "Bearer " + token,
@@ -43,10 +44,11 @@ class ArionAPI {
     });
 
     if (resp.statusCode == 200) {
-      Map res = json.decode(resp.body);
+      /*Map res = json.decode(resp.body);
       List<Transaction> result = new List();
       res['transaction'].forEach((value) => result.add(Transaction.fromJson(value)));
-      return result;
+      return result;*/
+      return Transactions.fromJson(json.decode(resp.body));
     } else {
       throw Exception('It fails. fuck you!');
     }

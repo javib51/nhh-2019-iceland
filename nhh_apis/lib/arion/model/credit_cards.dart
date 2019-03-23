@@ -1,27 +1,23 @@
-// To parse this JSON data, do
-//
-//     final welcome = welcomeFromJson(jsonString);
-
 import 'dart:convert';
 
-Welcome welcomeFromJson(String str) {
+CreditCards creditCardsFromJson(String str) {
   final jsonData = json.decode(str);
-  return Welcome.fromJson(jsonData);
+  return CreditCards.fromJson(jsonData);
 }
 
-String welcomeToJson(Welcome data) {
+String creditCardsToJson(CreditCards data) {
   final dyn = data.toJson();
   return json.encode(dyn);
 }
 
-class Welcome {
+class CreditCards {
   List<CreditCard> creditCard;
 
-  Welcome({
+  CreditCards({
     this.creditCard,
   });
 
-  factory Welcome.fromJson(Map<String, dynamic> json) => new Welcome(
+  factory CreditCards.fromJson(Map<String, dynamic> json) => new CreditCards(
     creditCard: new List<CreditCard>.from(json["creditCard"].map((x) => CreditCard.fromJson(x))),
   );
 
