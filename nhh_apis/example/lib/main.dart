@@ -36,6 +36,14 @@ class _MyAppState extends State<MyApp> {
       print(res.fileData[0].caloriesbmr);
       calories = res.fileData[0].caloriesbmr;
     });
+    loadActivity().then((res){
+      print(res.fileData[0].calories);
+      calories = res.fileData[0].calories;
+    });
+    loadSleep().then((res){
+      print(res.fileData[0].duration);
+      calories = res.fileData[0].duration;
+    });
   }
 
   // Platform messages are asynchronous, so we initialize in an async method.

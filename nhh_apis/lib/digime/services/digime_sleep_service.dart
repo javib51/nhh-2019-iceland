@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'package:nhh_apis/digime/model/digime_sleep_model.dart';
 
 Future<String> _loadSleepAsset() async {
-  return await rootBundle.loadString('assets/activity.json');
+  return await rootBundle.loadString('assets/sleep.json');
 }
 
 
