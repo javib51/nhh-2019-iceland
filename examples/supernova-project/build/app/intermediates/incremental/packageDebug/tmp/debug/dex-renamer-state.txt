@@ -1,0 +1,4 @@
+#Fri Mar 22 20:04:50 EET 2019
+base.0=/home/jbf/workspace/eit-aalto/nhh-2019-iceland/project/build/app/intermediates/transforms/dexMerger/debug/0
+path.0=classes.dex
+renamed.0=classes.dex

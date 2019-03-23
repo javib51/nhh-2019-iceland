@@ -21,6 +21,9 @@ class ExampleStateful extends StatefulWidget {
 }
 
 class _ExampleStatefulState extends State<ExampleStateful> {
+
+  String text;
+  int counter;
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -33,7 +36,16 @@ class _ExampleStatefulState extends State<ExampleStateful> {
           icon: new Icon(Icons.keyboard_backspace),
           onPressed: () => Navigator.pop(context),
         ),
+          actions: <Widget>[
+      new IconButton(
+        icon: new Icon(Icons.restore),
+        onPressed: () => setState(() {
+          counter++;
+          text = "Hello there " + counter.toString();
+        }),
       ),
+
+  ]),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
@@ -55,7 +67,7 @@ class _ExampleStatefulState extends State<ExampleStateful> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'Hey',
+              text,
             ),
           ],
         ),
