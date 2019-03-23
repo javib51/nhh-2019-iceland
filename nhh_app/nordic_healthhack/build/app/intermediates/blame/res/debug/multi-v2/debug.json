@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/jbf/workspace/eit-aalto/nhh-2019-iceland/nhh_app/nordic_healthhack/build/app/intermediates/res/merged/debug/values_values.arsc.flat",
+            "outputFile": "/Users/waliyah/Documents/GitHub/nhh-2019-iceland/nhh_app/nordic_healthhack/build/app/intermediates/res/merged/debug/values_values.arsc.flat",
             "map": [
                 {
-                    "source": "/home/jbf/workspace/eit-aalto/nhh-2019-iceland/nhh_app/nordic_healthhack/android/app/src/main/res/values/styles.xml",
+                    "source": "/Users/waliyah/Documents/GitHub/nhh-2019-iceland/nhh_app/nordic_healthhack/android/app/src/main/res/values/styles.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
