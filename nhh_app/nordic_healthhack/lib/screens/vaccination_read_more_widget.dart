@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:nordic_healthhack/widgets/secondary_page.dart';
 
 
 class VaccinationReadMoreWidget extends StatelessWidget {
@@ -20,71 +21,9 @@ class VaccinationReadMoreWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Container(
-                  constraints: BoxConstraints.expand(height: 56),
-                  margin: EdgeInsets.only(left: 1),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Container(
-                        constraints: BoxConstraints.expand(height: 56),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: [
-                            Container(
-                              constraints: BoxConstraints.expand(height: 56),
-                              decoration: BoxDecoration(
-                                color: Color.fromARGB(255, 135, 221, 167),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Color.fromARGB(62, 0, 0, 0),
-                                    offset: Offset(0, 4),
-                                    blurRadius: 4,
-                                  ),
-                                ],
-                              ),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.stretch,
-                                children: [
-                                  Container(
-                                    constraints: BoxConstraints.expand(height: 56),
-                                    child: Row(
-                                      children: [
-                                        Container(
-                                          margin: EdgeInsets.only(left: 16),
-                                          child: Image.asset(
-                                            "assets/images/back-3.png",
-                                            fit: BoxFit.none,
-                                          ),
-                                        ),
-                                        Container(
-                                          margin: EdgeInsets.only(left: 32),
-                                          child: Text(
-                                            "Vaccination Details",
-                                            style: TextStyle(
-                                              color: Color.fromARGB(255, 255, 255, 255),
-                                              fontSize: 20,
-                                              fontFamily: "Roboto",
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                            textAlign: TextAlign.left,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.only(left: 18, top: 46),
+                  margin: EdgeInsets.only(
+                      left: MediaQuery.of(context).size.width / 20,
+                      top: MediaQuery.of(context).size.height / 20),
                   child: Text(
                     "Your attention is required",
                     style: TextStyle(
@@ -97,8 +36,12 @@ class VaccinationReadMoreWidget extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  constraints: BoxConstraints.expand(height: 217),
-                  margin: EdgeInsets.only(left: 18, top: 15, right: 15),
+                  constraints: BoxConstraints.expand(height: MediaQuery.of(context).size.height / 3.5),
+                  margin: EdgeInsets.only(
+                      left: MediaQuery.of(context).size.width / 40,
+                      top: MediaQuery.of(context).size.height / 40,
+                      right: MediaQuery.of(context).size.width / 40
+                  ),
                   decoration: BoxDecoration(
                     border: Border.all(
                       color: Color.fromARGB(255, 134, 220, 166),
@@ -109,7 +52,9 @@ class VaccinationReadMoreWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Container(
-                        margin: EdgeInsets.only(left: 31, top: 13, right: 31),
+                        margin: EdgeInsets.only(
+                            top: MediaQuery.of(context).size.height / 40,
+                        ),
                         child: Text(
                           "Thailand - Required Vaccinations",
                           style: TextStyle(
@@ -122,7 +67,9 @@ class VaccinationReadMoreWidget extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(left: 13, top: 15, right: 14),
+                        margin: EdgeInsets.only(top: MediaQuery.of(context).size.height / 40,
+                            right: MediaQuery.of(context).size.width / 15,
+                            left: MediaQuery.of(context).size.width / 15),
                         child: Text(
                           "You miss 1 vaccination recommended by WHO: Hepatitis A.\n\nBook your appointment now to be prepared in time.",
                           style: TextStyle(
@@ -140,9 +87,21 @@ class VaccinationReadMoreWidget extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.end,
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
-                            Container(
-                              constraints: BoxConstraints.expand(height: 37),
-                              margin: EdgeInsets.only(left: 65, right: 64, bottom: 10),
+                            GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => SecondaryPage("Appointments")),
+                                  );
+                                },
+                                child: Container(
+                              constraints: BoxConstraints.expand(height: MediaQuery.of(context).size.height / 20),
+                              margin: EdgeInsets.only(
+                                  left: MediaQuery.of(context).size.width / 4,
+                                  right: MediaQuery.of(context).size.width / 4,
+                                  bottom: MediaQuery.of(context).size.height / 40
+                              ),
                               decoration: BoxDecoration(
                                 color: Color.fromARGB(255, 68, 70, 69),
                                 boxShadow: [
@@ -158,7 +117,7 @@ class VaccinationReadMoreWidget extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.stretch,
                                 children: [
                                   Container(
-                                    margin: EdgeInsets.only(left: 34, right: 33),
+                                    margin: EdgeInsets.only(top: MediaQuery.of(context).size.height / 60,),
                                     child: Text(
                                       "Book appointment",
                                       style: TextStyle(
@@ -170,7 +129,7 @@ class VaccinationReadMoreWidget extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                     ),
                                   ),
-                                ],
+                                ]),
                               ),
                             ),
                           ],
@@ -180,8 +139,12 @@ class VaccinationReadMoreWidget extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  constraints: BoxConstraints.expand(height: 220),
-                  margin: EdgeInsets.only(left: 17, top: 8, right: 16),
+                  constraints: BoxConstraints.expand(height: MediaQuery.of(context).size.height / 3.5),
+                  margin: EdgeInsets.only(
+                      left: MediaQuery.of(context).size.width / 40,
+                      top: MediaQuery.of(context).size.height / 40,
+                      right: MediaQuery.of(context).size.width / 40
+                  ),
                   decoration: BoxDecoration(
                     border: Border.all(
                       color: Color.fromARGB(255, 134, 220, 166),
@@ -192,7 +155,7 @@ class VaccinationReadMoreWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Container(
-                        margin: EdgeInsets.only(left: 32, top: 12, right: 32),
+                        margin: EdgeInsets.only(top: MediaQuery.of(context).size.height / 40),
                         child: Text(
                           "Thailand - Optional Vaccinations",
                           style: TextStyle(
@@ -205,7 +168,11 @@ class VaccinationReadMoreWidget extends StatelessWidget {
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(left: 13, top: 13, right: 14),
+                        margin: EdgeInsets.only(
+                          top: MediaQuery.of(context).size.height / 40,
+                          left: MediaQuery.of(context).size.width / 10,
+                          right: MediaQuery.of(context).size.width / 10
+                        ),
                         child: Text(
                           "Optional vaccinations depending on your travel style include: Typhoid, Rabies, Malaria prevention (tablets).\nConsider consulting a tropical institute for further information.",
                           style: TextStyle(
@@ -224,8 +191,12 @@ class VaccinationReadMoreWidget extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
                             Container(
-                              constraints: BoxConstraints.expand(height: 34),
-                              margin: EdgeInsets.only(left: 64, right: 65, bottom: 14),
+                              constraints: BoxConstraints.expand(height: MediaQuery.of(context).size.height / 20),
+                              margin: EdgeInsets.only(
+                                  left: MediaQuery.of(context).size.width / 4,
+                                  right: MediaQuery.of(context).size.width / 4,
+                                  bottom: MediaQuery.of(context).size.height / 40
+                              ),
                               decoration: BoxDecoration(
                                 color: Color.fromARGB(255, 68, 70, 69),
                                 boxShadow: [
@@ -240,8 +211,18 @@ class VaccinationReadMoreWidget extends StatelessWidget {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.stretch,
                                 children: [
-                                  Container(
-                                    margin: EdgeInsets.only(left: 34, right: 33),
+                                GestureDetector(
+                                    onTap: () {
+                                      Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                            builder: (context) => SecondaryPage("Appointments")),
+                                  );
+                                },
+                                child: Container(
+                                    margin: EdgeInsets.only(
+                                      top: MediaQuery.of(context).size.height / 60,
+                                    ),
                                     child: Text(
                                       "Book appointment",
                                       style: TextStyle(
@@ -253,98 +234,13 @@ class VaccinationReadMoreWidget extends StatelessWidget {
                                       textAlign: TextAlign.center,
                                     ),
                                   ),
-                                ],
-                              ),
+                                ),
+                              ]),
                             ),
                           ],
                         ),
                       ),
                     ],
-                  ),
-                ),
-                Expanded(
-                  flex: 1,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Container(
-                        constraints: BoxConstraints.expand(height: 48),
-                        decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 0, 0, 0),
-                        ),
-                        child: Stack(
-                          fit: StackFit.expand,
-                          children: [
-                            Row(
-                              crossAxisAlignment: CrossAxisAlignment.stretch,
-                              children: [
-                                Container(
-                                  alignment: Alignment.centerLeft,
-                                  child: Container(
-                                    margin: EdgeInsets.only(left: 71),
-                                    child: Image.asset(
-                                      "assets/images/back-4.png",
-                                      fit: BoxFit.none,
-                                    ),
-                                  ),
-                                ),
-                                Expanded(
-                                  flex: 1,
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.end,
-                                    children: [
-                                      Container(
-                                        width: 16,
-                                        height: 16,
-                                        margin: EdgeInsets.only(right: 71),
-                                        decoration: BoxDecoration(
-                                          border: Border.all(
-                                            color: Color.fromARGB(255, 255, 255, 255),
-                                            width: 2,
-                                          ),
-                                          borderRadius: BorderRadius.all(Radius.circular(2)),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Container(
-                                  width: 16,
-                                  height: 16,
-                                  decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: Color.fromARGB(255, 255, 255, 255),
-                                      width: 2,
-                                    ),
-                                    borderRadius: BorderRadius.all(Radius.circular(8)),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                Container(
-                  constraints: BoxConstraints.expand(height: 56),
-                  margin: EdgeInsets.only(left: 1),
-                  child: Image.asset(
-                    "assets/images/elements---bottom-navigation---4-items-with-text.png",
-                    fit: BoxFit.cover,
                   ),
                 ),
               ],
