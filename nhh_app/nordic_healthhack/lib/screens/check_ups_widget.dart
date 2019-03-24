@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:nordic_healthhack/widgets/app_bar.dart';
+import 'package:nordic_healthhack/widgets/bottom_bar.dart';
 
 
 class CheckUpsWidget extends StatelessWidget {

@@ -8,86 +8,17 @@ class PrecriptionMainWidget extends StatelessWidget {
   Widget build(BuildContext context) {
   
     return Scaffold(
-      body: Container(
-        constraints: BoxConstraints.expand(),
-        decoration: BoxDecoration(
-          color: Color.fromARGB(255, 255, 255, 255),
-        ),
-        child: Column(
+      body: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Container(
-              constraints: BoxConstraints.expand(height: 56),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Container(
-                    constraints: BoxConstraints.expand(height: 56),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Container(
-                          constraints: BoxConstraints.expand(height: 56),
-                          decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 135, 221, 167),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Color.fromARGB(62, 0, 0, 0),
-                                offset: Offset(0, 4),
-                                blurRadius: 4,
-                              ),
-                            ],
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [
-                              Container(
-                                constraints: BoxConstraints.expand(height: 56),
-                                child: Row(
-                                  children: [
-                                    Container(
-                                      margin: EdgeInsets.only(left: 16),
-                                      child: Image.asset(
-                                        "assets/images/back.png",
-                                        fit: BoxFit.none,
-                                      ),
-                                    ),
-                                    Container(
-                                      margin: EdgeInsets.only(left: 32),
-                                      child: Text(
-                                        "Prescriptions",
-                                        style: TextStyle(
-                                          color: Color.fromARGB(255, 255, 255, 255),
-                                          fontSize: 20,
-                                          fontFamily: "Roboto",
-                                          fontWeight: FontWeight.w500,
-                                        ),
-                                        textAlign: TextAlign.left,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              constraints: BoxConstraints.expand(height: 141),
+              constraints: BoxConstraints.expand(height: 175),
               margin: EdgeInsets.only(left: 18, top: 53, right: 18),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Container(
-                    margin: EdgeInsets.only(left: 1),
+                    margin: EdgeInsets.only(left: 8, bottom: 15),
                     child: Text(
                       "Your attention is required",
                       style: TextStyle(
@@ -133,7 +64,7 @@ class PrecriptionMainWidget extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
                             Container(
-                              margin: EdgeInsets.only(left: 9, top: 20),
+                              margin: EdgeInsets.only(left: 15, top: 32),
                               child: Text(
                                 "You need a new prescription for Yasmine!",
                                 style: TextStyle(
@@ -160,13 +91,13 @@ class PrecriptionMainWidget extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
                             SizedBox(
-                              width: 14,
+                              width: 0,
                             ),
                             Expanded(
                               flex: 1,
                               child: Container(
-                                height: 36,
-                                margin: EdgeInsets.only(bottom: 12),
+                                height: 50,
+                                margin: EdgeInsets.only(top: 0),
                                 decoration: BoxDecoration(
                                   color: Color.fromARGB(255, 68, 70, 69),
                                   boxShadow: [
@@ -182,7 +113,7 @@ class PrecriptionMainWidget extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.stretch,
                                   children: [
                                     Container(
-                                      margin: EdgeInsets.only(left: 22, right: 21),
+                                      margin: EdgeInsets.only(left:0, top: 20),
                                       child: Text(
                                         "Request now",
                                         style: TextStyle(
@@ -199,13 +130,13 @@ class PrecriptionMainWidget extends StatelessWidget {
                               ),
                             ),
                             SizedBox(
-                              width: 14,
+                              width: 8,
                             ),
                             Expanded(
                               flex: 1,
                               child: Container(
-                                height: 36,
-                                margin: EdgeInsets.only(bottom: 12),
+                                height: 50,
+                                margin: EdgeInsets.only(top: 0),
                                 decoration: BoxDecoration(
                                   color: Color.fromARGB(255, 68, 70, 69),
                                   boxShadow: [
@@ -221,9 +152,9 @@ class PrecriptionMainWidget extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.stretch,
                                   children: [
                                     Container(
-                                      margin: EdgeInsets.symmetric(horizontal: 30),
+                                      margin: EdgeInsets.only(left:0, top: 20),
                                       child: Text(
-                                        "Request now",
+                                        "Book appointment",
                                         style: TextStyle(
                                           color: Color.fromARGB(255, 255, 255, 255),
                                           fontSize: 14,
@@ -238,7 +169,7 @@ class PrecriptionMainWidget extends StatelessWidget {
                               ),
                             ),
                             SizedBox(
-                              width: 13,
+                              width: 0,
                             ),
                           ],
                         ),
@@ -249,7 +180,7 @@ class PrecriptionMainWidget extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(left: 18, top: 52),
+              margin: EdgeInsets.only(left: 30, top: 60),
               child: Text(
                 "Past Prescriptions",
                 style: TextStyle(
@@ -271,10 +202,17 @@ class PrecriptionMainWidget extends StatelessWidget {
                       Expanded(
                         flex: 1,
                         child: Container(
-                          height: 156,
-                          margin: EdgeInsets.only(left: 18, top: 17, right: 18),
+                          height: 40,
+                          margin: EdgeInsets.only(left: 18, top: 17, right: 18, bottom: 50),
                           decoration: BoxDecoration(
                             color: Color.fromARGB(255, 216, 216, 216),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Color.fromARGB(62, 0, 0, 0),
+                                offset: Offset(0, 4),
+                                blurRadius: 4,
+                              ),
+                            ],
                           ),
                         ),
                       ),
@@ -284,14 +222,14 @@ class PrecriptionMainWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Container(
-                        margin: EdgeInsets.only(left: 37, top: 29),
+                        margin: EdgeInsets.only(left: 50, top: 50),
                         child: Text(
                           "Yasmine\nContraceptive Pill\nPhysician: Dr. Skawínski\nDate of Prescription: 01.08.2018",
                           style: TextStyle(
                             color: Color.fromARGB(255, 75, 74, 75),
                             fontSize: 18,
                             fontFamily: "Lato",
-                            fontWeight: FontWeight.w700,
+                            fontWeight: FontWeight.w500,
                           ),
                           textAlign: TextAlign.left,
                         ),
@@ -307,13 +245,13 @@ class PrecriptionMainWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   SizedBox(
-                    width: 36,
+                    width: 20,
                   ),
                   Expanded(
                     flex: 1,
                     child: Container(
-                      height: 36,
-                      margin: EdgeInsets.only(top: 7),
+                      height: 0,
+                      margin: EdgeInsets.only(top: 0, bottom: 180),
                       decoration: BoxDecoration(
                         color: Color.fromARGB(255, 68, 70, 69),
                         boxShadow: [
@@ -329,7 +267,7 @@ class PrecriptionMainWidget extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           Container(
-                            margin: EdgeInsets.only(left: 20, right: 19),
+                            margin: EdgeInsets.only(top: 17),
                             child: Text(
                               "Request again",
                               style: TextStyle(
@@ -346,13 +284,13 @@ class PrecriptionMainWidget extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    width: 15,
+                    width: 8,
                   ),
                   Expanded(
                     flex: 1,
                     child: Container(
-                      height: 36,
-                      margin: EdgeInsets.only(top: 7),
+                      height: 0,
+                      margin: EdgeInsets.only(top: 0, bottom: 180),
                       decoration: BoxDecoration(
                         color: Color.fromARGB(255, 68, 70, 69),
                         boxShadow: [
@@ -368,7 +306,7 @@ class PrecriptionMainWidget extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           Container(
-                            margin: EdgeInsets.only(left: 28, right: 27),
+                            margin: EdgeInsets.only(top: 17),
                             child: Text(
                               "View details",
                               style: TextStyle(
@@ -385,30 +323,13 @@ class PrecriptionMainWidget extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    width: 33,
-                  ),
-                ],
-              ),
-            ),
-            Expanded(
-              flex: 1,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Container(
-                    constraints: BoxConstraints.expand(height: 56),
-                    child: Image.asset(
-                      "assets/images/elements---bottom-navigation---4-items-with-text.png",
-                      fit: BoxFit.cover,
-                    ),
+                    width: 20,
                   ),
                 ],
               ),
             ),
           ],
         ),
-      ),
     );
   }
 }

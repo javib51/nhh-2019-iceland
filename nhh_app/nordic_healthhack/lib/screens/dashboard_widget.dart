@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:nordic_healthhack/widgets/app_bar.dart';
+import 'package:nordic_healthhack/widgets/bottom_bar.dart';
 import 'package:responsive_container/responsive_container.dart';
 import 'package:nordic_healthhack/screens/medical_profile_widget.dart';
 import 'package:nordic_healthhack/screens/appointments_two_widget.dart';
@@ -200,6 +201,7 @@ class DashboardWidget extends StatelessWidget {
                       ),
                     ],
                   ),
+                  NhhBottomBar(),
                 ],
               ),
             ),
@@ -281,6 +283,7 @@ class DashboardWidget extends StatelessWidget {
                               ),
                             ),
                             ),
+                            //////////////////////////////////////////// BOTTOM BAR?
                           ],
                         ),
                       ),
