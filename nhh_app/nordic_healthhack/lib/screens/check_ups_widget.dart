@@ -70,7 +70,8 @@ class CheckUpsWidget extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => SecondaryPage("Check Ups 2")),
+                                builder: (context) =>
+                                    SecondaryPage("Check Ups 2")),
                           );
                         },
                         child: Container(
@@ -99,32 +100,41 @@ class CheckUpsWidget extends StatelessWidget {
                             textAlign: TextAlign.center,
                           ),
                         )),
-                    Container(
-                      width: MediaQuery.of(context).size.width / 3,
-                      height: MediaQuery.of(context).size.height / 15,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 69, 71, 69),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Color.fromARGB(62, 0, 0, 0),
-                            offset: Offset(0, 8),
-                            blurRadius: 8,
+                    GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    SecondaryPage("Appointments")),
+                          );
+                        },
+                        child: Container(
+                          width: MediaQuery.of(context).size.width / 3,
+                          height: MediaQuery.of(context).size.height / 15,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            color: Color.fromARGB(255, 69, 71, 69),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Color.fromARGB(62, 0, 0, 0),
+                                offset: Offset(0, 8),
+                                blurRadius: 8,
+                              ),
+                            ],
+                            borderRadius: BorderRadius.all(Radius.circular(2)),
                           ),
-                        ],
-                        borderRadius: BorderRadius.all(Radius.circular(2)),
-                      ),
-                      child: Text(
-                        "Book Appointment",
-                        style: TextStyle(
-                          color: Color.fromARGB(223, 252, 252, 252),
-                          fontSize: MediaQuery.of(context).size.height / 50,
-                          letterSpacing: 0.5,
-                          fontFamily: "Open Sans",
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
+                          child: Text(
+                            "Book Appointment",
+                            style: TextStyle(
+                              color: Color.fromARGB(223, 252, 252, 252),
+                              fontSize: MediaQuery.of(context).size.height / 50,
+                              letterSpacing: 0.5,
+                              fontFamily: "Open Sans",
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        )),
                   ],
                 ),
               ],
@@ -153,7 +163,7 @@ class CheckUpsWidget extends StatelessWidget {
           height: MediaQuery.of(context).size.height / 15,
           alignment: Alignment.center,
           decoration: BoxDecoration(
-            color: Color.fromARGB(255, 172, 172, 172),
+            color: Color.fromARGB(255, 216, 216, 216),
             boxShadow: [
               BoxShadow(
                 color: Color.fromARGB(62, 0, 0, 0),
@@ -183,7 +193,7 @@ class CheckUpsWidget extends StatelessWidget {
           height: MediaQuery.of(context).size.height / 15,
           alignment: Alignment.center,
           decoration: BoxDecoration(
-            color: Color.fromARGB(255, 172, 172, 172),
+            color: Color.fromARGB(255, 216, 216, 216),
             boxShadow: [
               BoxShadow(
                 color: Color.fromARGB(62, 0, 0, 0),
@@ -213,7 +223,7 @@ class CheckUpsWidget extends StatelessWidget {
           height: MediaQuery.of(context).size.height / 15,
           alignment: Alignment.center,
           decoration: BoxDecoration(
-            color: Color.fromARGB(255, 172, 172, 172),
+            color: Color.fromARGB(255, 216, 216, 216),
             boxShadow: [
               BoxShadow(
                 color: Color.fromARGB(62, 0, 0, 0),
@@ -243,7 +253,7 @@ class CheckUpsWidget extends StatelessWidget {
           height: MediaQuery.of(context).size.height / 15,
           alignment: Alignment.center,
           decoration: BoxDecoration(
-            color: Color.fromARGB(255, 172, 172, 172),
+            color: Color.fromARGB(255, 216, 216, 216),
             boxShadow: [
               BoxShadow(
                 color: Color.fromARGB(62, 0, 0, 0),
