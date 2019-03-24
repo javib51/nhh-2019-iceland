@@ -365,7 +365,7 @@ class DashboardWidgetState extends State<DashboardWidget> {
   Widget build(BuildContext context) {
     return ListView.builder(
       padding: EdgeInsets.all(8.0),
-      itemExtent: 100.0,
+      itemExtent: 120.0,
       itemCount: 6,
       itemBuilder: (BuildContext context, int index) {
         return getElement(context, index);

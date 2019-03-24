@@ -77,7 +77,17 @@ class TestsWidget extends StatelessWidget {
                     child: Container(
                         width: MediaQuery.of(context).size.height/6,
                         height: MediaQuery.of(context).size.height/10,
-                        color: Color.fromARGB(255, 135, 221, 167),
+                        decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 135, 221, 167),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Color.fromARGB(62, 0, 0, 0),
+                              offset: Offset(0, 8),
+                              blurRadius: 8,
+                            ),
+                          ],
+                          borderRadius: BorderRadius.all(Radius.circular(14)),
+                        ),
                         child: Column(
                           children: [
                             Container(
