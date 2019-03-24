@@ -227,20 +227,23 @@ class PrecriptionMainWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Container(
-                        margin: EdgeInsets.only(left: 50, top: 65),
+                        margin: EdgeInsets.only(left: 50, top: 45),
                         child: RichText(
                           text: TextSpan(
                             // Note: Styles for TextSpans must be explicitly defined.
                             // Child text spans will inherit styles from parent
                             style: TextStyle(
-                              fontSize: MediaQuery.of(context).size.height / 50,
                               color: Color.fromARGB(255, 75, 74, 75),
+                              fontSize: 16,
+                              fontFamily: "Open Sans",
+                              fontWeight: FontWeight.w300,
                             ),
                             children: <TextSpan>[
                               TextSpan(text: 'Name: ',
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold)),
                               TextSpan(text: healthApi_data.returnData.medicationData[0].name),
+                              TextSpan(text: '\n'),
                               TextSpan(text: '\n'),
                               TextSpan(text: 'Quantity: ',
                                   style: TextStyle(
@@ -261,6 +264,7 @@ class PrecriptionMainWidget extends StatelessWidget {
                                   .medicationData[0].instructions.substring(22,
                                   healthApi_data.returnData.medicationData[0]
                                       .instructions.length)),
+                              TextSpan(text: '\n'),
                               TextSpan(text: '\n'),
                               TextSpan(text: 'Prescription ends: ',
                                   style: TextStyle(

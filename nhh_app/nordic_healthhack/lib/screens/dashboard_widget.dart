@@ -41,7 +41,7 @@ class DashboardWidgetState extends State<DashboardWidget> {
                 children: [
                   Container(
                     constraints: BoxConstraints.expand(width: 60),
-                    margin: EdgeInsets.only(left: 80,  bottom:10),
+                    margin: EdgeInsets.only(left: 10,  bottom:10),
                     child: Image.asset(
                       "assets/images/gym.png",
                       fit: BoxFit.contain,
@@ -95,7 +95,7 @@ class DashboardWidgetState extends State<DashboardWidget> {
               },
               child: Container(
                 constraints: BoxConstraints.expand(width: 60),
-                margin: EdgeInsets.only(left: 80, bottom:10),
+                margin: EdgeInsets.only(left: 10, bottom:10),
                 child: Image.asset(
                   "assets/images/man.png",
                   fit: BoxFit.contain,
@@ -147,7 +147,7 @@ class DashboardWidgetState extends State<DashboardWidget> {
 
               child: Container(
                 constraints: BoxConstraints.expand(width: 60),
-                margin: EdgeInsets.only(left: 80, bottom:10),
+                margin: EdgeInsets.only(left: 10, bottom:10),
                 child: Image.asset(
                   "assets/images/vitals.png",
                   fit: BoxFit.contain,
@@ -198,7 +198,7 @@ class DashboardWidgetState extends State<DashboardWidget> {
               },
               child: Container(
                 constraints: BoxConstraints.expand(width: 60),
-                margin: EdgeInsets.only(left: 80, bottom: 10),
+                margin: EdgeInsets.only(left: 10, bottom: 10),
                 decoration: BoxDecoration(
                   color: Color.fromARGB(131, 111, 180, 139),
                   borderRadius: BorderRadius.all(Radius.circular(80)),
@@ -259,7 +259,7 @@ class DashboardWidgetState extends State<DashboardWidget> {
 
               child: Container(
                 constraints: BoxConstraints.expand(width: 60),
-                margin: EdgeInsets.only(left: 80, bottom: 10),
+                margin: EdgeInsets.only(left: 10, bottom: 10),
                 child: Image.asset(
                   "assets/images/syringe.png",
                   fit: BoxFit.contain,
@@ -311,7 +311,7 @@ class DashboardWidgetState extends State<DashboardWidget> {
               },
               child: Container(
                 constraints: BoxConstraints.expand(width: 60),
-                margin: EdgeInsets.only(left: 80, bottom: 10),
+                margin: EdgeInsets.only(left: 10, bottom: 10),
                 decoration: BoxDecoration(
                   color: Color.fromARGB(131, 201, 135, 173),
                   borderRadius: BorderRadius.all(Radius.circular(80)),
