@@ -26,13 +26,31 @@ class NhhAppBar {
       child: new ListView(
         children: <Widget>[
           new ListTile(
-              leading: new Icon(Icons.info),
+              leading: new Container(
+                  width: 30.0,
+                  height: 30.0,
+                  alignment: Alignment.center,
+                  decoration: new BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("assets/images/gym.png"),
+                    ),
+                  )
+              ),
               title: new Text("Life Style"),
               onTap: (){
               }
           ),
           new ListTile(
-              leading: new Icon(Icons.info),
+              leading: new Container(
+                  width: 30.0,
+                  height: 30.0,
+                  alignment: Alignment.center,
+                  decoration: new BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("assets/images/man.png"),
+                    ),
+                  )
+              ),
               title: new Text("Medical Profile"),
               onTap: (){
                 Navigator.of(context).pop();
@@ -42,7 +60,16 @@ class NhhAppBar {
               }
           ),
           new ListTile(
-              leading: new Icon(Icons.info),
+              leading: new Container(
+                  width: 30.0,
+                  height: 30.0,
+                  alignment: Alignment.center,
+                  decoration: new BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("assets/images/vitals.png"),
+                    ),
+                  )
+              ),
               title: new Text("Check Ups"),
               onTap: (){
                 Navigator.of(context).pop();
@@ -52,7 +79,16 @@ class NhhAppBar {
               }
           ),
           new ListTile(
-              leading: new Icon(Icons.info),
+              leading: new Container(
+                  width: 30.0,
+                  height: 30.0,
+                  alignment: Alignment.center,
+                  decoration: new BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage("assets/images/calendar.png"),
+                  ),
+                  )
+              ),
               title: new Text("Appointments"),
               onTap: (){
                 Navigator.of(context).pop();
@@ -62,7 +98,16 @@ class NhhAppBar {
               }
           ),
           new ListTile(
-              leading: new Icon(Icons.info),
+              leading: new Container(
+                  width: 30.0,
+                  height: 30.0,
+                  alignment: Alignment.center,
+                  decoration: new BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("assets/images/syringe.png"),
+                    ),
+                  )
+              ),
               title: new Text("Vaccinations"),
               onTap: (){
                 Navigator.of(context).pop();
@@ -72,7 +117,16 @@ class NhhAppBar {
               }
           ),
           new ListTile(
-              leading: new Icon(Icons.info),
+              leading: new Container(
+                  width: 30.0,
+                  height: 30.0,
+                  alignment: Alignment.center,
+                  decoration: new BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("assets/images/prescription.png"),
+                    ),
+                  )
+              ),
               title: new Text("Prescription"),
               onTap: (){
                 Navigator.of(context).pop();
