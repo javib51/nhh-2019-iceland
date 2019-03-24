@@ -1,6 +1,7 @@
 package io.flutter.plugins;
 
 import io.flutter.plugin.common.PluginRegistry;
+import javib51.github.com.nhh_apis.NhhApisPlugin;
 
 /**
  * Generated file. Do not edit.
@@ -10,6 +11,7 @@ public final class GeneratedPluginRegistrant {
     if (alreadyRegisteredWith(registry)) {
       return;
     }
+    NhhApisPlugin.registerWith(registry.registrarFor("javib51.github.com.nhh_apis.NhhApisPlugin"));
   }
 
   private static boolean alreadyRegisteredWith(PluginRegistry registry) {
