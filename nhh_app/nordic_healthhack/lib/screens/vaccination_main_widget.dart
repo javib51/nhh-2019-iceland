@@ -6,26 +6,12 @@ import 'package:nordic_healthhack/widgets/secondary_page.dart';
 class VaccinationMainWidget extends StatelessWidget {
   Widget getElement(BuildContext context, int index) {
     List<Widget> widgets = [
+
       Container(
-        margin: EdgeInsets.only(
-            left: MediaQuery.of(context).size.width / 15,
-            top: MediaQuery.of(context).size.height / 20),
-        child: Text(
-          "Your attention is required",
-          style: TextStyle(
-            color: Color.fromARGB(255, 75, 74, 75),
-            fontSize: 18,
-            fontFamily: "Lato",
-            fontWeight: FontWeight.w700,
-          ),
-          textAlign: TextAlign.left,
-        ),
-      ),
-      Container(
-        margin: EdgeInsets.only(
-            top: MediaQuery.of(context).size.height / 50,
-            left: MediaQuery.of(context).size.width / 15,
-            right: MediaQuery.of(context).size.width / 15),
+//        margin: EdgeInsets.only(
+//            top: MediaQuery.of(context).size.height / 50,
+//            left: MediaQuery.of(context).size.width / 15,
+//            right: MediaQuery.of(context).size.width / 15),
         height: MediaQuery.of(context).size.height / 5,
         decoration: BoxDecoration(
           color: Color.fromARGB(255, 135, 221, 167),
@@ -42,10 +28,26 @@ class VaccinationMainWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Container(
-              margin: EdgeInsets.only(
-                  left: MediaQuery.of(context).size.width / 30,
-                  right: MediaQuery.of(context).size.width / 30,
-                  top: MediaQuery.of(context).size.height / 50),
+//              margin: EdgeInsets.only(
+//                  left: MediaQuery.of(context).size.width / 15,
+//                  top: MediaQuery.of(context).size.height / 20),
+              child: Text(
+                "Your attention is required",
+                style: TextStyle(
+                  color: Color.fromARGB(255, 75, 74, 75),
+                  fontSize: 18,
+                  fontFamily: "Lato",
+                  fontWeight: FontWeight.w700,
+                ),
+                textAlign: TextAlign.left,
+              ),
+            ),
+
+            Container(
+//              margin: EdgeInsets.only(
+//                  left: MediaQuery.of(context).size.width / 30,
+//                  right: MediaQuery.of(context).size.width / 30,
+//                  top: MediaQuery.of(context).size.height / 50),
               child: Text(
                 "Your recent lifestyle changes have indicated you might be at risk.",
                 style: TextStyle(
@@ -138,11 +140,15 @@ class VaccinationMainWidget extends StatelessWidget {
         ),
       ),
       Container(
-        height: 90,
+        height: 100,
+        width: 50,
         //margin: EdgeInsets.fromLTRB(20, 10, 10, 90),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            SizedBox(
+              width: 10,
+            ),
             Text(
               "What’s up soon?",
               style: TextStyle(
@@ -486,7 +492,6 @@ class VaccinationMainWidget extends StatelessWidget {
           ],
         ),
       ),
-      Container(),
     ];
     return widgets[index];
   }
@@ -496,7 +501,7 @@ class VaccinationMainWidget extends StatelessWidget {
     return ListView.builder(
       padding: EdgeInsets.all(8.0),
       itemExtent: 140.0,
-      itemCount: 6,
+      itemCount: 5,
       itemBuilder: (BuildContext context, int index) {
         return getElement(context, index);
       },
