@@ -40,11 +40,11 @@ class DashboardWidgetState extends State<DashboardWidget> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Container(
-                    constraints: BoxConstraints.expand(width: 99),
-//                    margin: EdgeInsets.only(left: 42, top: 29),
+                    constraints: BoxConstraints.expand(width: 100),
+                    margin: EdgeInsets.only(bottom:10),
                     child: Image.asset(
                       "assets/images/gym.png",
-                      fit: BoxFit.none,
+                      fit: BoxFit.contain,
                     ),
                   ),
                 ],
@@ -59,11 +59,11 @@ class DashboardWidgetState extends State<DashboardWidget> {
                 );
               },
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-                      margin: EdgeInsets.only(top: 1, left: 62),
+                      margin: EdgeInsets.only(top: 1, left: 50),
                       child: Text(
                         "Life Style",
                         style: TextStyle(
@@ -94,11 +94,11 @@ class DashboardWidgetState extends State<DashboardWidget> {
                 );
               },
               child: Container(
-                constraints: BoxConstraints.expand(width: 126),
-                margin: EdgeInsets.only(top: 16, right: 31),
+                constraints: BoxConstraints.expand(width: 100),
+                margin: EdgeInsets.only(bottom:10),
                 child: Image.asset(
                   "assets/images/man.png",
-                  fit: BoxFit.none,
+                  fit: BoxFit.contain,
                 ),
               ),
             ),
@@ -111,11 +111,11 @@ class DashboardWidgetState extends State<DashboardWidget> {
                 );
               },
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-                      margin: EdgeInsets.only(top: 1, left: 10),
+                      margin: EdgeInsets.only(top: 1, left: 50),
                       child: Text(
                         "Medical Profile",
                         style: TextStyle(
@@ -146,11 +146,11 @@ class DashboardWidgetState extends State<DashboardWidget> {
               },
 
               child: Container(
-                constraints: BoxConstraints.expand(width: 90),
-                margin: EdgeInsets.only(left: 10, top: 43),
+                constraints: BoxConstraints.expand(width: 100),
+                margin: EdgeInsets.only(bottom:10),
                 child: Image.asset(
                   "assets/images/vitals.png",
-                  fit: BoxFit.none,
+                  fit: BoxFit.contain,
                 ),
               ),
             ),
@@ -163,11 +163,11 @@ class DashboardWidgetState extends State<DashboardWidget> {
                 );
               },
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-                      margin: EdgeInsets.only(top: 1, left: 75),
+                      margin: EdgeInsets.only(top: 1, left: 50),
                       child: Text(
                         "Check Ups",
                         style: TextStyle(
@@ -197,18 +197,18 @@ class DashboardWidgetState extends State<DashboardWidget> {
                 );
               },
               child: Container(
-                constraints: BoxConstraints.expand(width: 126),
-                margin: EdgeInsets.only(top: 25, right: 33),
+                constraints: BoxConstraints.expand(width: 100),
+                margin: EdgeInsets.only(bottom: 10),
                 decoration: BoxDecoration(
                   color: Color.fromARGB(131, 111, 180, 139),
-                  borderRadius: BorderRadius.all(Radius.circular(63)),
+                  borderRadius: BorderRadius.all(Radius.circular(80)),
                 ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
                       "assets/images/calendar.png",
-                      fit: BoxFit.none,
+                      fit: BoxFit.contain,
                     ),
                   ],
                 ),
@@ -227,7 +227,7 @@ class DashboardWidgetState extends State<DashboardWidget> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-                      margin: EdgeInsets.only(top: 1, left: 30),
+                      margin: EdgeInsets.only(top: 1, left: 50),
                       child: Text(
                         "Appointments",
                         style: TextStyle(
@@ -258,10 +258,11 @@ class DashboardWidgetState extends State<DashboardWidget> {
               },
 
               child: Container(
-                margin: EdgeInsets.only(top: 20),
+                constraints: BoxConstraints.expand(width: 100),
+                margin: EdgeInsets.only(bottom: 10),
                 child: Image.asset(
                   "assets/images/syringe.png",
-                  fit: BoxFit.none,
+                  fit: BoxFit.contain,
                 ),
               ),
             ),
@@ -274,11 +275,12 @@ class DashboardWidgetState extends State<DashboardWidget> {
                 );
               },
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-                      margin: EdgeInsets.only(top: 1, left: 62),
+
+                      margin: EdgeInsets.only(top: 1, left: 50),
                       child: Text(
                         "Vaccinations",
                         style: TextStyle(
@@ -308,19 +310,18 @@ class DashboardWidgetState extends State<DashboardWidget> {
                 );
               },
               child: Container(
-                width: 126,
-                height: 126,
-                margin: EdgeInsets.only(right: 30, bottom: 2),
+                constraints: BoxConstraints.expand(width: 100),
+                margin: EdgeInsets.only(bottom: 10),
                 decoration: BoxDecoration(
                   color: Color.fromARGB(131, 201, 135, 173),
-                  borderRadius: BorderRadius.all(Radius.circular(63)),
+                  borderRadius: BorderRadius.all(Radius.circular(80)),
                 ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
                       "assets/images/prescription.png",
-                      fit: BoxFit.none,
+                      fit: BoxFit.contain,
                     ),
                   ],
                 ),
@@ -335,11 +336,11 @@ class DashboardWidgetState extends State<DashboardWidget> {
                 );
               },
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-                      margin: EdgeInsets.only(top: 1, left: 62),
+                      margin: EdgeInsets.only(top: 1, left: 50),
                       child: Text(
                         "Prescription",
                         style: TextStyle(
