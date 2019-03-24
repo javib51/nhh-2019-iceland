@@ -159,7 +159,7 @@ class DashboardWidgetState extends State<DashboardWidget> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => Home("Check Ups")),
+                      builder: (context) => SecondaryPage("Check Ups")),
                 );
               },
               child: Row(

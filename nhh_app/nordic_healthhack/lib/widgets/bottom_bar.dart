@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:nordic_healthhack/screens/check_ups_widget.dart';
 import 'package:nordic_healthhack/screens/dashboard_widget.dart';
 import 'package:nordic_healthhack/screens/medical_profile_widget.dart';
+import 'package:nordic_healthhack/screens/dashboard_welcome_widget.dart';
 
 class NhhBottomBar extends StatefulWidget {
   NhhBottomBar({Key key, this.title}) : super(key: key);
@@ -77,7 +77,7 @@ class _NhhBottomBarState extends State<NhhBottomBar> {
                 }else if (index == 2){
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => CheckUpsWidget()),
+                    MaterialPageRoute(builder: (context) => DashboardWelcomeWidget()),
                   );
                 }else {
 //                  Navigator.push(

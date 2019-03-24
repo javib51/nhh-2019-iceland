@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nordic_healthhack/screens/appointments_widget.dart';
 import 'package:nordic_healthhack/screens/check_ups_widget.dart';
+import 'package:nordic_healthhack/screens/dashboard_welcome_widget.dart';
 import 'package:nordic_healthhack/screens/dashboard_widget.dart';
 import 'package:nordic_healthhack/screens/medical_profile_widget.dart';
 import 'package:nordic_healthhack/screens/precription_main_widget.dart';
@@ -22,13 +23,13 @@ class _HomeState extends State<Home> {
   List<String> _title = [
     "Dashboard",
     "Medical Profile",
-    "Check Ups",
+    "Notifications",
     "Settings"
   ];
   List<Widget> _children = [
     DashboardWidget(),
     MedicalProfileWidget(),
-    CheckUpsWidget(),
+    DashboardWelcomeWidget(),
     Container()
   ];
 
@@ -42,7 +43,7 @@ class _HomeState extends State<Home> {
       case "Medical Profile":
         _cIndex=1;
         break;
-      case "Check Ups":
+      case "Notifications":
         _cIndex=2;
         break;
       case "Settings":
@@ -109,13 +110,12 @@ class _HomeState extends State<Home> {
               ),
               title: new Text("Check Ups"),
               onTap: (){
-               /* Navigator.of(context).pop();
+                Navigator.of(context).pop();
                 Navigator.push(
                     context,
-//                    MaterialPageRoute(builder: (context) => CheckUpsWidget()));
-                    MaterialPageRoute(builder: (context) => Home()));*/
-                Navigator.of(context).pop();
-               _incrementTab(2);
+                    MaterialPageRoute(builder: (context) => SecondaryPage("Check Ups")));
+ //                   MaterialPageRoute(builder: (context) => Home()));
+
               }
           ),
           new ListTile(
