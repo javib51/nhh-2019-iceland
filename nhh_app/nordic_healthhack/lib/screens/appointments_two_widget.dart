@@ -1,18 +1,17 @@
-
 import 'package:flutter/material.dart';
 import 'package:nordic_healthhack/widgets/app_bar.dart';
 import 'package:nordic_healthhack/widgets/secondary_page.dart';
-
+import 'package:nhh_apis/health_api/health_api.dart';
+import 'package:nordic_healthhack/main.dart';
 
 class AppointmentsTwoWidget extends StatelessWidget {
-  
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Row(
-          children:[
+          children: [
             Container(
               margin: EdgeInsets.only(
                   left: MediaQuery.of(context).size.width / 15,
@@ -21,10 +20,7 @@ class AppointmentsTwoWidget extends StatelessWidget {
                 "Upcoming Appointments",
                 style: TextStyle(
                   color: Color.fromARGB(255, 75, 74, 75),
-                  fontSize: MediaQuery
-                      .of(context)
-                      .size
-                      .height / 40,
+                  fontSize: MediaQuery.of(context).size.height / 40,
                   fontFamily: "Lato",
                   fontWeight: FontWeight.w700,
                 ),
@@ -43,7 +39,8 @@ class AppointmentsTwoWidget extends StatelessWidget {
                   width: 0.5,
                   color: Color.fromARGB(255, 135, 221, 167),
                 ),
-                borderRadius: BorderRadius.all(Radius.circular(MediaQuery.of(context).size.width / 12/2)),
+                borderRadius: BorderRadius.all(Radius.circular(
+                    MediaQuery.of(context).size.width / 12 / 2)),
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -63,144 +60,452 @@ class AppointmentsTwoWidget extends StatelessWidget {
           ],
         ),
         Container(
-          margin: EdgeInsets.only(
-              top: MediaQuery.of(context).size.height / 50,
-              left: MediaQuery.of(context).size.width / 15,
-              right: MediaQuery.of(context).size.width / 15),
-          width: MediaQuery.of(context).size.width / 3,
-          height: MediaQuery.of(context).size.height / 15,
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-            color: Color.fromARGB(255, 216, 216, 216),
-            boxShadow: [
-              BoxShadow(
-                color: Color.fromARGB(62, 0, 0, 0),
-                offset: Offset(0, 8),
-                blurRadius: 8,
-              ),
-            ],
-            borderRadius: BorderRadius.all(Radius.circular(2)),
-          ),
-          child: Text(
-            "Blood check",
-            style: TextStyle(
-              color: Color.fromARGB(255, 75, 74, 75),
-              fontSize: MediaQuery.of(context).size.height / 50,
-              letterSpacing: 0.5,
-              fontFamily: "Open Sans",
-            ),
-            textAlign: TextAlign.center,
-          ),
-        ),
-        Container(
-          margin: EdgeInsets.only(
-              top: MediaQuery.of(context).size.height / 50,
-              left: MediaQuery.of(context).size.width / 15,
-              right: MediaQuery.of(context).size.width / 15),
-          width: MediaQuery.of(context).size.width / 3,
-          height: MediaQuery.of(context).size.height / 15,
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-            color: Color.fromARGB(255, 216, 216, 216),
-            boxShadow: [
-              BoxShadow(
-                color: Color.fromARGB(62, 0, 0, 0),
-                offset: Offset(0, 8),
-                blurRadius: 8,
-              ),
-            ],
-            borderRadius: BorderRadius.all(Radius.circular(2)),
-          ),
-          child: Text(
-            "",
-            style: TextStyle(
-              color: Color.fromARGB(255, 75, 74, 75),
-              fontSize: MediaQuery.of(context).size.height / 50,
-              letterSpacing: 0.5,
-              fontFamily: "Open Sans",
-            ),
-            textAlign: TextAlign.center,
-          ),
-        ),
-
-            Container(
-              margin: EdgeInsets.only(
-                  left: MediaQuery.of(context).size.width / 15,
-                  top: MediaQuery.of(context).size.height / 20),
-              child: Text(
-                "Past Appointments",
-                style: TextStyle(
-                  color: Color.fromARGB(255, 75, 74, 75),
-                  fontSize: MediaQuery
-                      .of(context)
-                      .size
-                      .height / 40,
-                  fontFamily: "Lato",
-                  fontWeight: FontWeight.w700,
+            margin: EdgeInsets.only(
+                top: MediaQuery.of(context).size.height / 50,
+                left: MediaQuery.of(context).size.width / 15,
+                right: MediaQuery.of(context).size.width / 15),
+            width: MediaQuery.of(context).size.width / 3,
+            height: MediaQuery.of(context).size.height / 5,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: Color.fromARGB(255, 216, 216, 216),
+              boxShadow: [
+                BoxShadow(
+                  color: Color.fromARGB(62, 0, 0, 0),
+                  offset: Offset(0, 8),
+                  blurRadius: 8,
                 ),
-                textAlign: TextAlign.left,
-              ),
+              ],
+              borderRadius: BorderRadius.all(Radius.circular(2)),
             ),
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      Text(
+                        "Date: ".toString(),
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 75, 74, 75),
+                          fontWeight: FontWeight.bold,
+                          fontSize: MediaQuery.of(context).size.height / 50,
+                          letterSpacing: 0.5,
+                          fontFamily: "Open Sans",
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      Text(
+                        healthApi_data
+                            .returnData
+                            .appointmentData[healthApi_data
+                                    .returnData.appointmentData.length -
+                                1]
+                            .appointmentTime
+                            .substring(0, 10),
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 75, 74, 75),
+                          fontSize: MediaQuery.of(context).size.height / 50,
+                          letterSpacing: 0.5,
+                          fontFamily: "Open Sans",
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      Text(
+                        "Time: ".toString(),
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 75, 74, 75),
+                          fontWeight: FontWeight.bold,
+                          fontSize: MediaQuery.of(context).size.height / 50,
+                          letterSpacing: 0.5,
+                          fontFamily: "Open Sans",
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      Text(
+                        healthApi_data
+                            .returnData
+                            .appointmentData[healthApi_data
+                                    .returnData.appointmentData.length -
+                                1]
+                            .appointmentTime
+                            .substring(11, 16),
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 75, 74, 75),
+                          fontSize: MediaQuery.of(context).size.height / 50,
+                          letterSpacing: 0.5,
+                          fontFamily: "Open Sans",
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      Text(
+                        "Location: ".toString(),
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 75, 74, 75),
+                          fontWeight: FontWeight.bold,
+                          fontSize: MediaQuery.of(context).size.height / 50,
+                          letterSpacing: 0.5,
+                          fontFamily: "Open Sans",
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      Text(
+                        healthApi_data
+                            .returnData
+                            .appointmentData[healthApi_data
+                                    .returnData.appointmentData.length -
+                                1]
+                            .location,
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 75, 74, 75),
+                          fontSize: MediaQuery.of(context).size.height / 50,
+                          letterSpacing: 0.5,
+                          fontFamily: "Open Sans",
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      Text(
+                        "Doctor: ".toString(),
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 75, 74, 75),
+                          fontWeight: FontWeight.bold,
+                          fontSize: MediaQuery.of(context).size.height / 50,
+                          letterSpacing: 0.5,
+                          fontFamily: "Open Sans",
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      Text(
+                        healthApi_data
+                            .returnData
+                            .appointmentData[healthApi_data
+                                    .returnData.appointmentData.length -
+                                1]
+                            .resource,
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 75, 74, 75),
+                          fontSize: MediaQuery.of(context).size.height / 50,
+                          letterSpacing: 0.5,
+                          fontFamily: "Open Sans",
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                ])),
+        Container(
+            margin: EdgeInsets.only(
+                top: MediaQuery.of(context).size.height / 50,
+                left: MediaQuery.of(context).size.width / 15,
+                right: MediaQuery.of(context).size.width / 15),
+            width: MediaQuery.of(context).size.width / 3,
+            height: MediaQuery.of(context).size.height / 5,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: Color.fromARGB(255, 216, 216, 216),
+              boxShadow: [
+                BoxShadow(
+                  color: Color.fromARGB(62, 0, 0, 0),
+                  offset: Offset(0, 8),
+                  blurRadius: 8,
+                ),
+              ],
+              borderRadius: BorderRadius.all(Radius.circular(2)),
+            ),
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      Text(
+                        "Date: ".toString(),
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 75, 74, 75),
+                          fontWeight: FontWeight.bold,
+                          fontSize: MediaQuery.of(context).size.height / 50,
+                          letterSpacing: 0.5,
+                          fontFamily: "Open Sans",
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      Text(
+                        healthApi_data
+                            .returnData
+                            .appointmentData[healthApi_data
+                                    .returnData.appointmentData.length -
+                                2]
+                            .appointmentTime
+                            .substring(0, 10),
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 75, 74, 75),
+                          fontSize: MediaQuery.of(context).size.height / 50,
+                          letterSpacing: 0.5,
+                          fontFamily: "Open Sans",
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      Text(
+                        "Time: ".toString(),
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 75, 74, 75),
+                          fontWeight: FontWeight.bold,
+                          fontSize: MediaQuery.of(context).size.height / 50,
+                          letterSpacing: 0.5,
+                          fontFamily: "Open Sans",
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      Text(
+                        healthApi_data
+                            .returnData
+                            .appointmentData[healthApi_data
+                                    .returnData.appointmentData.length -
+                                2]
+                            .appointmentTime
+                            .substring(11, 16),
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 75, 74, 75),
+                          fontSize: MediaQuery.of(context).size.height / 50,
+                          letterSpacing: 0.5,
+                          fontFamily: "Open Sans",
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      Text(
+                        "Location: ".toString(),
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 75, 74, 75),
+                          fontWeight: FontWeight.bold,
+                          fontSize: MediaQuery.of(context).size.height / 50,
+                          letterSpacing: 0.5,
+                          fontFamily: "Open Sans",
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      Text(
+                        healthApi_data
+                            .returnData
+                            .appointmentData[healthApi_data
+                                    .returnData.appointmentData.length -
+                                2]
+                            .location,
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 75, 74, 75),
+                          fontSize: MediaQuery.of(context).size.height / 50,
+                          letterSpacing: 0.5,
+                          fontFamily: "Open Sans",
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      Text(
+                        "Doctor: ".toString(),
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 75, 74, 75),
+                          fontWeight: FontWeight.bold,
+                          fontSize: MediaQuery.of(context).size.height / 50,
+                          letterSpacing: 0.5,
+                          fontFamily: "Open Sans",
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      Text(
+                        healthApi_data
+                            .returnData
+                            .appointmentData[healthApi_data
+                                    .returnData.appointmentData.length -
+                                1]
+                            .resource,
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 75, 74, 75),
+                          fontSize: MediaQuery.of(context).size.height / 50,
+                          letterSpacing: 0.5,
+                          fontFamily: "Open Sans",
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                ])),
         Container(
           margin: EdgeInsets.only(
-              top: MediaQuery.of(context).size.height / 50,
               left: MediaQuery.of(context).size.width / 15,
-              right: MediaQuery.of(context).size.width / 15),
-          width: MediaQuery.of(context).size.width / 3,
-          height: MediaQuery.of(context).size.height / 15,
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-            color: Color.fromARGB(255, 216, 216, 216),
-            boxShadow: [
-              BoxShadow(
-                color: Color.fromARGB(62, 0, 0, 0),
-                offset: Offset(0, 8),
-                blurRadius: 8,
-              ),
-            ],
-            borderRadius: BorderRadius.all(Radius.circular(2)),
-          ),
+              top: MediaQuery.of(context).size.height / 20),
           child: Text(
-            "Blood check",
+            "Past Appointment",
             style: TextStyle(
               color: Color.fromARGB(255, 75, 74, 75),
-              fontSize: MediaQuery.of(context).size.height / 50,
-              letterSpacing: 0.5,
-              fontFamily: "Open Sans",
+              fontSize: MediaQuery.of(context).size.height / 40,
+              fontFamily: "Lato",
+              fontWeight: FontWeight.w700,
             ),
-            textAlign: TextAlign.center,
+            textAlign: TextAlign.left,
           ),
         ),
         Container(
-          margin: EdgeInsets.only(
-              top: MediaQuery.of(context).size.height / 50,
-              left: MediaQuery.of(context).size.width / 15,
-              right: MediaQuery.of(context).size.width / 15),
-          width: MediaQuery.of(context).size.width / 3,
-          height: MediaQuery.of(context).size.height / 15,
-          alignment: Alignment.center,
-          decoration: BoxDecoration(
-            color: Color.fromARGB(255, 216, 216, 216),
-            boxShadow: [
-              BoxShadow(
-                color: Color.fromARGB(62, 0, 0, 0),
-                offset: Offset(0, 8),
-                blurRadius: 8,
-              ),
-            ],
-            borderRadius: BorderRadius.all(Radius.circular(2)),
-          ),
-          child: Text(
-            "",
-            style: TextStyle(
-              color: Color.fromARGB(255, 75, 74, 75),
-              fontSize: MediaQuery.of(context).size.height / 50,
-              letterSpacing: 0.5,
-              fontFamily: "Open Sans",
+            margin: EdgeInsets.only(
+                top: MediaQuery.of(context).size.height / 50,
+                left: MediaQuery.of(context).size.width / 15,
+                right: MediaQuery.of(context).size.width / 15),
+            width: MediaQuery.of(context).size.width / 3,
+            height: MediaQuery.of(context).size.height / 5,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: Color.fromARGB(255, 216, 216, 216),
+              boxShadow: [
+                BoxShadow(
+                  color: Color.fromARGB(62, 0, 0, 0),
+                  offset: Offset(0, 8),
+                  blurRadius: 8,
+                ),
+              ],
+              borderRadius: BorderRadius.all(Radius.circular(2)),
             ),
-            textAlign: TextAlign.center,
-          ),
-        ),
+            child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      Text(
+                        "Date: ".toString(),
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 75, 74, 75),
+                          fontWeight: FontWeight.bold,
+                          fontSize: MediaQuery.of(context).size.height / 50,
+                          letterSpacing: 0.5,
+                          fontFamily: "Open Sans",
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      Text(
+                        healthApi_data
+                            .returnData
+                            .appointmentData[healthApi_data
+                            .returnData.appointmentData.length -
+                            3]
+                            .appointmentTime
+                            .substring(0, 10),
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 75, 74, 75),
+                          fontSize: MediaQuery.of(context).size.height / 50,
+                          letterSpacing: 0.5,
+                          fontFamily: "Open Sans",
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      Text(
+                        "Time: ".toString(),
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 75, 74, 75),
+                          fontWeight: FontWeight.bold,
+                          fontSize: MediaQuery.of(context).size.height / 50,
+                          letterSpacing: 0.5,
+                          fontFamily: "Open Sans",
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      Text(
+                        healthApi_data
+                            .returnData
+                            .appointmentData[healthApi_data
+                            .returnData.appointmentData.length -
+                            3]
+                            .appointmentTime
+                            .substring(11, 16),
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 75, 74, 75),
+                          fontSize: MediaQuery.of(context).size.height / 50,
+                          letterSpacing: 0.5,
+                          fontFamily: "Open Sans",
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      Text(
+                        "Location: ".toString(),
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 75, 74, 75),
+                          fontWeight: FontWeight.bold,
+                          fontSize: MediaQuery.of(context).size.height / 50,
+                          letterSpacing: 0.5,
+                          fontFamily: "Open Sans",
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      Text(
+                        healthApi_data
+                            .returnData
+                            .appointmentData[healthApi_data
+                            .returnData.appointmentData.length -
+                            3]
+                            .location,
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 75, 74, 75),
+                          fontSize: MediaQuery.of(context).size.height / 50,
+                          letterSpacing: 0.5,
+                          fontFamily: "Open Sans",
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: <Widget>[
+                      Text(
+                        "Doctor: ".toString(),
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 75, 74, 75),
+                          fontWeight: FontWeight.bold,
+                          fontSize: MediaQuery.of(context).size.height / 50,
+                          letterSpacing: 0.5,
+                          fontFamily: "Open Sans",
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                      Text(
+                        healthApi_data
+                            .returnData
+                            .appointmentData[healthApi_data
+                            .returnData.appointmentData.length -
+                            3]
+                            .resource,
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 75, 74, 75),
+                          fontSize: MediaQuery.of(context).size.height / 50,
+                          letterSpacing: 0.5,
+                          fontFamily: "Open Sans",
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                ])),
       ],
     );
 //    return Container(
