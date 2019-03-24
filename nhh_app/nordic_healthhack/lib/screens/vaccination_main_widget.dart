@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:nordic_healthhack/widgets/app_bar.dart';
 import 'package:nordic_healthhack/widgets/secondary_page.dart';
+import 'package:nhh_apis/health_api/health_api.dart';
+import 'package:nordic_healthhack/main.dart';
 
 
 class VaccinationMainWidget extends StatelessWidget {
@@ -458,7 +460,7 @@ class VaccinationMainWidget extends StatelessWidget {
                                       child: Container(
                                         margin: EdgeInsets.only(bottom: MediaQuery.of(context).size.height / 40),
                                         child: Text(
-                                          "Influenza",
+                                          healthApi_data.returnData.vaccinationData[0].codes[0].disease,
                                           style: TextStyle(
                                             color: Color.fromARGB(255, 75, 74, 75),
                                             fontSize: 16,
@@ -469,7 +471,7 @@ class VaccinationMainWidget extends StatelessWidget {
                                       ),
                                     ),
                                     SizedBox(
-                                      width: MediaQuery.of(context).size.height / 5,
+                                      width: MediaQuery.of(context).size.height / 10,
                                     ),
                                     Expanded(
                                       flex: 1,
@@ -566,7 +568,7 @@ class VaccinationMainWidget extends StatelessWidget {
                                       child: Container(
                                         margin: EdgeInsets.only(bottom: MediaQuery.of(context).size.height / 40),
                                         child: Text(
-                                          "Tdap",
+                                          healthApi_data.returnData.vaccinationData[1].codes[0].disease,
                                           style: TextStyle(
                                             color: Color.fromARGB(255, 75, 74, 75),
                                             fontSize: 16,
@@ -577,7 +579,7 @@ class VaccinationMainWidget extends StatelessWidget {
                                       ),
                                     ),
                                     SizedBox(
-                                      width: MediaQuery.of(context).size.height / 5,
+                                      width: MediaQuery.of(context).size.height / 10,
                                     ),
                                     Expanded(
                                       flex: 1,
