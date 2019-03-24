@@ -57,7 +57,7 @@ class DashboardWidgetState extends State<DashboardWidget> {
                               onTap: (){
                                 Navigator.push(
                                   context,
-                                  MaterialPageRoute(builder: (context) => MedicalProfileWidget()),
+                                  MaterialPageRoute(builder: (context) => Home("Medical Profile")),
                                 );
                               },
                             child: Container(
@@ -276,7 +276,7 @@ class DashboardWidgetState extends State<DashboardWidget> {
                               onTap: (){
                                 Navigator.push(
                                   context,
-                                  MaterialPageRoute(builder: (context) => VaccinationMainWidget()),
+                                  MaterialPageRoute(builder: (context) => SecondaryPage("Vaccinations")),
                                 );
                               },
 

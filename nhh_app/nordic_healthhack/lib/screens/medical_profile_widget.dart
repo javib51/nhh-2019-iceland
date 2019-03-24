@@ -69,6 +69,10 @@ class MedicalProfileWidget extends StatelessWidget {
                                   decoration: BoxDecoration(
                                     color: Color.fromARGB(255, 172, 172, 172),
                                     borderRadius: BorderRadius.all(Radius.circular(42.5)),
+                                    image: new DecorationImage(
+                                      image: ExactAssetImage("assets/images/man.png"),
+                                      fit: BoxFit.none,
+                                    ),
                                   ),
                                 ),
                               ],
