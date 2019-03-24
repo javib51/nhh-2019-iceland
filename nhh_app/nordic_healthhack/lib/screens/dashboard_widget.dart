@@ -40,8 +40,8 @@ class DashboardWidgetState extends State<DashboardWidget> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Container(
-                    constraints: BoxConstraints.expand(width: 80),
-                    margin: EdgeInsets.only(bottom:10),
+                    constraints: BoxConstraints.expand(width: 60),
+                    margin: EdgeInsets.only(left: 80,  bottom:10),
                     child: Image.asset(
                       "assets/images/gym.png",
                       fit: BoxFit.contain,
@@ -94,8 +94,8 @@ class DashboardWidgetState extends State<DashboardWidget> {
                 );
               },
               child: Container(
-                constraints: BoxConstraints.expand(width: 80),
-                margin: EdgeInsets.only(bottom:10),
+                constraints: BoxConstraints.expand(width: 60),
+                margin: EdgeInsets.only(left: 80, bottom:10),
                 child: Image.asset(
                   "assets/images/man.png",
                   fit: BoxFit.contain,
@@ -146,8 +146,8 @@ class DashboardWidgetState extends State<DashboardWidget> {
               },
 
               child: Container(
-                constraints: BoxConstraints.expand(width: 80),
-                margin: EdgeInsets.only(bottom:10),
+                constraints: BoxConstraints.expand(width: 60),
+                margin: EdgeInsets.only(left: 80, bottom:10),
                 child: Image.asset(
                   "assets/images/vitals.png",
                   fit: BoxFit.contain,
@@ -197,8 +197,8 @@ class DashboardWidgetState extends State<DashboardWidget> {
                 );
               },
               child: Container(
-                constraints: BoxConstraints.expand(width: 80),
-                margin: EdgeInsets.only(bottom: 10),
+                constraints: BoxConstraints.expand(width: 60),
+                margin: EdgeInsets.only(left: 80, bottom: 10),
                 decoration: BoxDecoration(
                   color: Color.fromARGB(131, 111, 180, 139),
                   borderRadius: BorderRadius.all(Radius.circular(80)),
@@ -258,8 +258,8 @@ class DashboardWidgetState extends State<DashboardWidget> {
               },
 
               child: Container(
-                constraints: BoxConstraints.expand(width: 80),
-                margin: EdgeInsets.only(bottom: 10),
+                constraints: BoxConstraints.expand(width: 60),
+                margin: EdgeInsets.only(left: 80, bottom: 10),
                 child: Image.asset(
                   "assets/images/syringe.png",
                   fit: BoxFit.contain,
@@ -310,8 +310,8 @@ class DashboardWidgetState extends State<DashboardWidget> {
                 );
               },
               child: Container(
-                constraints: BoxConstraints.expand(width: 80),
-                margin: EdgeInsets.only(bottom: 10),
+                constraints: BoxConstraints.expand(width: 60),
+                margin: EdgeInsets.only(left: 80, bottom: 10),
                 decoration: BoxDecoration(
                   color: Color.fromARGB(131, 201, 135, 173),
                   borderRadius: BorderRadius.all(Radius.circular(80)),
@@ -365,7 +365,7 @@ class DashboardWidgetState extends State<DashboardWidget> {
   Widget build(BuildContext context) {
     return ListView.builder(
       padding: EdgeInsets.all(8.0),
-      itemExtent: 140.0,
+      itemExtent: 100.0,
       itemCount: 6,
       itemBuilder: (BuildContext context, int index) {
         return getElement(context, index);
