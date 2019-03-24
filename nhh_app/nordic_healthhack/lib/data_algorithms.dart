@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:nordic_healthhack/screens/appointments_two_widget.dart';
 import 'package:nordic_healthhack/screens/appointments_widget.dart';
@@ -19,47 +18,12 @@ import 'package:nhh_apis/arion/model/transactions.dart';
 import 'package:nhh_apis/digime/model/digime_activity_model.dart';
 //import 'package:nhh_apis/digime/model/digime_dailyactivity_model.dart';
 import 'package:nhh_apis/digime/model/digime_sleep_model.dart';
+import 'package:nordic_healthhack/main.dart';
 
-HealthApi healthApi_data;
-Transactions transactions_data;
-Activity activity_data;
-Sleep sleep_data;
+double sleepTrend(Sleep _sleep_data){
+  double trend;
+  for (var i=0; i<_sleep_data.fileData.length; i++) {
 
-void main() => runApp(App());
-
-class App extends StatelessWidget {
-
-  @override
-  Widget build(BuildContext context) {
-
-    getAllHealth().then((res) {
-      print(res);
-      healthApi_data = res;
-    });
-
-    ArionAPI arion = ArionAPI();
-    arion.getCards().then((res) {
-      print(res.toString());
-      arion.getTransactions(res.creditCard[0].cardId).then((res) {
-        print(res.transaction.length.toString());
-        transactions_data =res;
-      });
-    });
-
-    loadDailyActivity().then((res){
-      print(res.fileData[0].caloriesbmr);
-    });
-    loadActivity().then((res){
-      print(res.fileData[0].calories);
-      activity_data=res;
-    });
-    loadSleep().then((res){
-      print(res.fileData.length.toString()+"d");
-      sleep_data=res;
-    });
-
-    return MaterialApp(
-      home: TestsWidget(),
-    );
   }
+  return trend;
 }
