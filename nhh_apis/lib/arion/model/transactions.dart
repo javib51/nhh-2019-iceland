@@ -1,29 +1,25 @@
-// To parse this JSON data, do
-//
-//     final welcome = welcomeFromJson(jsonString);
-
 import 'dart:convert';
 
-Welcome welcomeFromJson(String str) {
+Transactions transactionsFromJson(String str) {
   final jsonData = json.decode(str);
-  return Welcome.fromJson(jsonData);
+  return Transactions.fromJson(jsonData);
 }
 
-String welcomeToJson(Welcome data) {
+String transactionsToJson(Transactions data) {
   final dyn = data.toJson();
   return json.encode(dyn);
 }
 
-class Welcome {
+class Transactions {
   Paging paging;
   List<Transaction> transaction;
 
-  Welcome({
+  Transactions({
     this.paging,
     this.transaction,
   });
 
-  factory Welcome.fromJson(Map<String, dynamic> json) => new Welcome(
+  factory Transactions.fromJson(Map<String, dynamic> json) => new Transactions(
     paging: Paging.fromJson(json["paging"]),
     transaction: new List<Transaction>.from(json["transaction"].map((x) => Transaction.fromJson(x))),
   );

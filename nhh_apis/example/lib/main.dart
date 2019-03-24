@@ -31,9 +31,9 @@ class _MyAppState extends State<MyApp> {
 
     ArionAPI arion = ArionAPI();
     arion.getCards().then((res) {
-      print(res);
-      arion.getTransactions(res[0].cardId).then((res) {
-        print(res);
+      print(res.toString());
+      arion.getTransactions(res.creditCard[0].cardId).then((res) {
+        print(res.toString());
       });
     });
 

@@ -1,13 +1,15 @@
 
 import 'package:flutter/material.dart';
+import 'package:nordic_healthhack/widgets/app_bar.dart';
 
 
 class AppointmentsTwoWidget extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-  
+    NhhAppBar appBar = NhhAppBar("Appointments", searchFunction: () => print("clicked search button!"), menuFunction: () => print("clicked menu button!"),  moreFunction: () => print("clicked more button!"));
     return Scaffold(
+      appBar: appBar.get(),
       body: Container(
         constraints: BoxConstraints.expand(),
         decoration: BoxDecoration(
@@ -19,106 +21,6 @@ class AppointmentsTwoWidget extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Container(
-                  constraints: BoxConstraints.expand(height: 62),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Container(
-                        constraints: BoxConstraints.expand(height: 62),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: [
-                            Container(
-                              constraints: BoxConstraints.expand(height: 62),
-                              decoration: BoxDecoration(
-                                color: Color.fromARGB(255, 135, 221, 167),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Color.fromARGB(62, 0, 0, 0),
-                                    offset: Offset(0, 4),
-                                    blurRadius: 4,
-                                  ),
-                                ],
-                              ),
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.stretch,
-                                children: [
-                                  SizedBox(
-                                    width: 16,
-                                  ),
-                                  Expanded(
-                                    flex: 1,
-                                    child: Container(
-                                      height: 24,
-                                      margin: EdgeInsets.only(top: 22),
-                                      child: Image.asset(
-                                        "assets/images/menu.png",
-                                        fit: BoxFit.none,
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 32,
-                                  ),
-                                  Expanded(
-                                    flex: 1,
-                                    child: Container(
-                                      margin: EdgeInsets.only(top: 23),
-                                      child: Text(
-                                        "Appointments",
-                                        style: TextStyle(
-                                          color: Color.fromARGB(255, 255, 255, 255),
-                                          fontSize: 20,
-                                          fontFamily: "Roboto",
-                                          fontWeight: FontWeight.w500,
-                                        ),
-                                        textAlign: TextAlign.left,
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 94,
-                                  ),
-                                  Expanded(
-                                    flex: 1,
-                                    child: Container(
-                                      height: 24,
-                                      margin: EdgeInsets.only(top: 22),
-                                      child: Image.asset(
-                                        "assets/images/search-2.png",
-                                        fit: BoxFit.none,
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 16,
-                                  ),
-                                  Expanded(
-                                    flex: 1,
-                                    child: Container(
-                                      height: 24,
-                                      margin: EdgeInsets.only(top: 22),
-                                      child: Image.asset(
-                                        "assets/images/more.png",
-                                        fit: BoxFit.none,
-                                      ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: 16,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
                 Expanded(
                   flex: 1,
                   child: Row(
