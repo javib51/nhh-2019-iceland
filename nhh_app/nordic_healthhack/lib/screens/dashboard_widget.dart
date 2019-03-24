@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:nordic_healthhack/widgets/app_bar.dart';
 import 'package:nordic_healthhack/widgets/bottom_bar.dart';
@@ -6,25 +5,32 @@ import 'package:responsive_container/responsive_container.dart';
 import 'package:nordic_healthhack/screens/medical_profile_widget.dart';
 import 'package:nordic_healthhack/screens/appointments_two_widget.dart';
 import 'package:nordic_healthhack/screens/check_ups_widget.dart';
-import 'package:nordic_healthhack/screens/vaccination_main_widget.dart';
+import 'package:nordic_healthhack/screens/medical_profile_widget.dart';
 import 'package:nordic_healthhack/screens/precription_main_widget.dart';
+import 'package:nordic_healthhack/screens/vaccination_main_widget.dart';
+import 'package:nordic_healthhack/widgets/app_bar.dart';
+import 'package:nordic_healthhack/widgets/home.dart';
+import 'package:nordic_healthhack/widgets/secondary_page.dart';
 
+class DashboardWidget extends StatefulWidget {
 
-class DashboardWidget extends StatelessWidget {
-  
+  DashboardWidget();
+
+  @override
+  State createState() => new DashboardWidgetState();
+}
+
+class DashboardWidgetState extends State<DashboardWidget> {
+
   @override
   Widget build(BuildContext context) {
-    NhhAppBar appBar = NhhAppBar(context, "Dashboard", searchFunction: () => print("clicked search button!"), moreFunction: () => print("clicked more button!"));
-    return Scaffold(
-      appBar: appBar.get(),
-      drawer:  appBar.getDrawer(),
-      body: Container(
+    return Container(
         constraints: BoxConstraints.expand(),
         decoration: BoxDecoration(
           color: Color.fromARGB(255, 255, 255, 255),
         ),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(
               flex: 1,
@@ -153,7 +159,7 @@ class DashboardWidget extends StatelessWidget {
                               onTap: (){
                                 Navigator.push(
                                   context,
-                                  MaterialPageRoute(builder: (context) => AppointmentsTwoWidget()),
+                                  MaterialPageRoute(builder: (context) => SecondaryPage("Appointments")),
                                    );
                               },
                             child: Container(
@@ -186,7 +192,7 @@ class DashboardWidget extends StatelessWidget {
                         onTap: (){
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => CheckUpsWidget()),
+                            MaterialPageRoute(builder: (context) => Home("Check Ups")),
                           );
                         },
 
@@ -201,7 +207,6 @@ class DashboardWidget extends StatelessWidget {
                       ),
                     ],
                   ),
-                  NhhBottomBar(),
                 ],
               ),
             ),
@@ -297,7 +302,7 @@ class DashboardWidget extends StatelessWidget {
                                 onTap: (){
                                   Navigator.push(
                                     context,
-                                    MaterialPageRoute(builder: (context) => PrecriptionMainWidget()),
+                                    MaterialPageRoute(builder: (context) => SecondaryPage( "Prescription")),
                                 );
                             },
                             child: Container(
@@ -376,7 +381,6 @@ class DashboardWidget extends StatelessWidget {
             ),
           ],
         ),
-      ),
     );
   }
 }

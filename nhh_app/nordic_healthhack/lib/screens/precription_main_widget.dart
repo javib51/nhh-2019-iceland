@@ -6,19 +6,22 @@ class PrecriptionMainWidget extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-  
-    return Scaffold(
-      body: Column(
+    return Container(
+        constraints: BoxConstraints.expand(),
+        decoration: BoxDecoration(
+          color: Color.fromARGB(255, 255, 255, 255),
+        ),
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Container(
-              constraints: BoxConstraints.expand(height: 175),
-              margin: EdgeInsets.only(left: 18, top: 53, right: 18),
+              constraints: BoxConstraints.expand(height: 160),
+              margin: EdgeInsets.only(left: 18, top: 40, right: 15),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Container(
-                    margin: EdgeInsets.only(left: 8, bottom: 15),
+                    margin: EdgeInsets.only(left: 8, bottom: 0),
                     child: Text(
                       "Your attention is required",
                       style: TextStyle(
@@ -180,7 +183,7 @@ class PrecriptionMainWidget extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(left: 30, top: 60),
+              margin: EdgeInsets.only(left: 20, top: 60),
               child: Text(
                 "Past Prescriptions",
                 style: TextStyle(
@@ -203,7 +206,7 @@ class PrecriptionMainWidget extends StatelessWidget {
                         flex: 1,
                         child: Container(
                           height: 40,
-                          margin: EdgeInsets.only(left: 18, top: 17, right: 18, bottom: 50),
+                          margin: EdgeInsets.only(left: 18, top: 17, right: 18, bottom: 20),
                           decoration: BoxDecoration(
                             color: Color.fromARGB(255, 216, 216, 216),
                             boxShadow: [
@@ -222,7 +225,7 @@ class PrecriptionMainWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Container(
-                        margin: EdgeInsets.only(left: 50, top: 50),
+                        margin: EdgeInsets.only(left: 50, top: 54),
                         child: Text(
                           "Yasmine\nContraceptive Pill\nPhysician: Dr. Skawínski\nDate of Prescription: 01.08.2018",
                           style: TextStyle(
@@ -251,7 +254,7 @@ class PrecriptionMainWidget extends StatelessWidget {
                     flex: 1,
                     child: Container(
                       height: 0,
-                      margin: EdgeInsets.only(top: 0, bottom: 180),
+                      margin: EdgeInsets.only(top: 0, bottom: 150),
                       decoration: BoxDecoration(
                         color: Color.fromARGB(255, 68, 70, 69),
                         boxShadow: [
@@ -267,7 +270,7 @@ class PrecriptionMainWidget extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           Container(
-                            margin: EdgeInsets.only(top: 17),
+                            margin: EdgeInsets.only(top: 23),
                             child: Text(
                               "Request again",
                               style: TextStyle(
@@ -290,7 +293,7 @@ class PrecriptionMainWidget extends StatelessWidget {
                     flex: 1,
                     child: Container(
                       height: 0,
-                      margin: EdgeInsets.only(top: 0, bottom: 180),
+                      margin: EdgeInsets.only(top: 0, bottom: 150),
                       decoration: BoxDecoration(
                         color: Color.fromARGB(255, 68, 70, 69),
                         boxShadow: [
@@ -306,7 +309,7 @@ class PrecriptionMainWidget extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
                           Container(
-                            margin: EdgeInsets.only(top: 17),
+                            margin: EdgeInsets.only(top: 23),
                             child: Text(
                               "View details",
                               style: TextStyle(
@@ -324,7 +327,7 @@ class PrecriptionMainWidget extends StatelessWidget {
                   ),
                   SizedBox(
                     width: 20,
-                  ),
+               ),
                 ],
               ),
             ),

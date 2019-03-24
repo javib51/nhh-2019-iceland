@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:nordic_healthhack/screens/dashboard_widget.dart';
+import 'package:nordic_healthhack/widgets/home.dart';
 import 'package:responsive_container/responsive_container.dart';
 
 
@@ -70,7 +71,7 @@ class TestsWidget extends StatelessWidget {
                     onTap: (){
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => DashboardWidget()),
+                        MaterialPageRoute(builder: (context) => Home("Dashboard")),
                       );
                     },
                     child: Container(
