@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nordic_healthhack/widgets/app_bar.dart';
+import 'package:nordic_healthhack/widgets/secondary_page.dart';
+
 
 class CheckUp2Widget extends StatelessWidget {
   @override
@@ -80,6 +82,178 @@ class CheckUp2Widget extends StatelessWidget {
                     ),
                   ),
                 ],
+              ),
+          ),
+          Container(
+            height: MediaQuery.of(context).size.height / 10,
+            margin: EdgeInsets.only(
+                left: MediaQuery.of(context).size.width / 15,
+                right: MediaQuery.of(context).size.width / 15,
+                top: MediaQuery.of(context).size.height / 30),
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: Color.fromARGB(255, 135, 221, 167),
+                width: 1,
+              ),
+            ),
+            child: Row(
+              children: [
+                Container(
+                  margin: EdgeInsets.only(
+                      left: MediaQuery.of(context).size.width / 60),
+                  height: MediaQuery.of(context).size.height / 20,
+                  alignment: Alignment.center,
+                  child: Image.asset(
+                    "assets/images/weights.png",
+                    fit: BoxFit.none,
+                  ),
+                ),
+                Flexible(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(
+                            left: MediaQuery.of(context).size.width / 40),
+                        alignment: Alignment.center,
+                        child: RichText(
+                          text: TextSpan(
+                            // Note: Styles for TextSpans must be explicitly defined.
+                            // Child text spans will inherit styles from parent
+                            style: TextStyle(
+                              fontSize: MediaQuery.of(context).size.height / 42,
+                              color: Color.fromARGB(255, 75, 74, 75),
+                            ),
+                            children: <TextSpan>[
+                              TextSpan(text: 'Your workout duration has decreased by over '),
+                              TextSpan(text: '50%.',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold)),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            height: MediaQuery.of(context).size.height / 10,
+            margin: EdgeInsets.only(
+                left: MediaQuery.of(context).size.width / 15,
+                right: MediaQuery.of(context).size.width / 15,
+                top: MediaQuery.of(context).size.height / 30),
+            decoration: BoxDecoration(
+              border: Border.all(
+                color: Color.fromARGB(255, 135, 221, 167),
+                width: 1,
+              ),
+            ),
+            child: Row(
+              children: [
+                Container(
+                  margin: EdgeInsets.only(
+                      left: MediaQuery.of(context).size.width / 60),
+                  height: MediaQuery.of(context).size.height / 20,
+                  alignment: Alignment.center,
+                  child: Image.asset(
+                    "assets/images/pizza-2.png",
+                    fit: BoxFit.none,
+                  ),
+                ),
+                Flexible(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(
+                            left: MediaQuery.of(context).size.width / 40),
+                        alignment: Alignment.center,
+                        child: RichText(
+                          text: TextSpan(
+                            // Note: Styles for TextSpans must be explicitly defined.
+                            // Child text spans will inherit styles from parent
+                            style: TextStyle(
+                              fontSize: MediaQuery.of(context).size.height / 42,
+                              color: Color.fromARGB(255, 75, 74, 75),
+                            ),
+                            children: <TextSpan>[
+                              TextSpan(text: 'Your food and drink purchases have become '),
+                              TextSpan(text: 'consistently unhealthy',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold)),
+                              TextSpan(text: ' in the past 30 days.'),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.only(
+                left: MediaQuery.of(context).size.width / 15,
+                right: MediaQuery.of(context).size.width / 15,
+                top: MediaQuery.of(context).size.height / 20),
+            child: RichText(
+              text: TextSpan(
+                // Note: Styles for TextSpans must be explicitly defined.
+                // Child text spans will inherit styles from parent
+                style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.height / 35,
+                  color: Color.fromARGB(255, 255, 0, 0),
+                ),
+                children: <TextSpan>[
+                  TextSpan(text: 'This combination of lifestyle changes is putting you at risk. '),
+                  TextSpan(text: 'Please get checked up!',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold),),
+                ],
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ),
+          GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => SecondaryPage("Appointments")),
+                );
+              },
+              child: Container(
+                height: MediaQuery.of(context).size.height / 15,
+                margin: EdgeInsets.only(
+                    left: MediaQuery.of(context).size.width / 5,
+                    right: MediaQuery.of(context).size.width / 5,
+                    top: MediaQuery.of(context).size.height / 30),
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 69, 71, 69),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color.fromARGB(62, 0, 0, 0),
+                      offset: Offset(0, 8),
+                      blurRadius: 8,
+                    ),
+                  ],
+                  borderRadius: BorderRadius.all(Radius.circular(2)),
+                ),
+                child: Text(
+                  "Book Appointment",
+                  style: TextStyle(
+                    color: Color.fromARGB(223, 252, 252, 252),
+                    fontSize: MediaQuery.of(context).size.height / 50,
+                    letterSpacing: 0.5,
+                    fontFamily: "Open Sans",
+                  ),
+                  textAlign: TextAlign.center,
+                ),
               )),
         ]),
     );
