@@ -141,7 +141,7 @@ class DashboardWidgetState extends State<DashboardWidget> {
               onTap: (){
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Home("Check Ups")),
+                  MaterialPageRoute(builder: (context) => SecondaryPage("Check Ups")),
                 );
               },
 
