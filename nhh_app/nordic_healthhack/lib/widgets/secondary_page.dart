@@ -3,6 +3,7 @@ import 'package:nordic_healthhack/screens/appointments_two_widget.dart';
 import 'package:nordic_healthhack/screens/appointments_widget.dart';
 import 'package:nordic_healthhack/screens/check_up2_widget.dart';
 import 'package:nordic_healthhack/screens/check_ups_widget.dart';
+import 'package:nordic_healthhack/screens/dashboard_welcome_widget.dart';
 import 'package:nordic_healthhack/screens/dashboard_widget.dart';
 import 'package:nordic_healthhack/screens/medical_profile_widget.dart';
 import 'package:nordic_healthhack/screens/precription_main_widget.dart';
@@ -31,7 +32,8 @@ class _SecondaryPageState extends State<SecondaryPage> {
     "Vaccinations",
     "Prescription",
     "Check Ups 2",
-    "Vaccination Read More"
+    "Vaccination Read More",
+    "Notifications"
   ];
   List<Widget> _children = [
     Container(),
@@ -41,7 +43,8 @@ class _SecondaryPageState extends State<SecondaryPage> {
     VaccinationMainWidget(),
     PrecriptionMainWidget(),
     CheckUp2Widget(),
-    VaccinationReadMoreWidget()
+    VaccinationReadMoreWidget(),
+    DashboardWelcomeWidget()
   ];
 
   @override
@@ -71,6 +74,9 @@ class _SecondaryPageState extends State<SecondaryPage> {
         break;
       case "Vaccination Read More":
         _cIndex=7;
+        break;
+      case "Notifications":
+        _cIndex=8;
         break;
     }
   }

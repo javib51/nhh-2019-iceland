@@ -40,7 +40,7 @@ class DashboardWidgetState extends State<DashboardWidget> {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Container(
-                    constraints: BoxConstraints.expand(width: 100),
+                    constraints: BoxConstraints.expand(width: 80),
                     margin: EdgeInsets.only(bottom:10),
                     child: Image.asset(
                       "assets/images/gym.png",
@@ -94,7 +94,7 @@ class DashboardWidgetState extends State<DashboardWidget> {
                 );
               },
               child: Container(
-                constraints: BoxConstraints.expand(width: 100),
+                constraints: BoxConstraints.expand(width: 80),
                 margin: EdgeInsets.only(bottom:10),
                 child: Image.asset(
                   "assets/images/man.png",
@@ -146,7 +146,7 @@ class DashboardWidgetState extends State<DashboardWidget> {
               },
 
               child: Container(
-                constraints: BoxConstraints.expand(width: 100),
+                constraints: BoxConstraints.expand(width: 80),
                 margin: EdgeInsets.only(bottom:10),
                 child: Image.asset(
                   "assets/images/vitals.png",
@@ -159,7 +159,7 @@ class DashboardWidgetState extends State<DashboardWidget> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => Home("Check Ups")),
+                      builder: (context) => SecondaryPage("Check Ups")),
                 );
               },
               child: Row(
@@ -197,7 +197,7 @@ class DashboardWidgetState extends State<DashboardWidget> {
                 );
               },
               child: Container(
-                constraints: BoxConstraints.expand(width: 100),
+                constraints: BoxConstraints.expand(width: 80),
                 margin: EdgeInsets.only(bottom: 10),
                 decoration: BoxDecoration(
                   color: Color.fromARGB(131, 111, 180, 139),
@@ -258,7 +258,7 @@ class DashboardWidgetState extends State<DashboardWidget> {
               },
 
               child: Container(
-                constraints: BoxConstraints.expand(width: 100),
+                constraints: BoxConstraints.expand(width: 80),
                 margin: EdgeInsets.only(bottom: 10),
                 child: Image.asset(
                   "assets/images/syringe.png",
@@ -310,7 +310,7 @@ class DashboardWidgetState extends State<DashboardWidget> {
                 );
               },
               child: Container(
-                constraints: BoxConstraints.expand(width: 100),
+                constraints: BoxConstraints.expand(width: 80),
                 margin: EdgeInsets.only(bottom: 10),
                 decoration: BoxDecoration(
                   color: Color.fromARGB(131, 201, 135, 173),

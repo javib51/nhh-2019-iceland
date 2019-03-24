@@ -51,7 +51,7 @@ class VaccinationMainWidget extends StatelessWidget {
               child: Text(
                 "Your recent lifestyle changes have indicated you might be at risk.",
                 style: TextStyle(
-                  color: Color.fromARGB(255, 75, 74, 75),
+                  color: Color.fromARGB(255, 75, 74, 75
                   fontSize: 18,
                   fontFamily: "Lato",
                 ),
