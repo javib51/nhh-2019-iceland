@@ -5,6 +5,7 @@ import 'package:nhh_apis/digime/model/digime_sleep_model.dart';
 import 'package:nordic_healthhack/data_algorithms.dart';
 import 'package:nordic_healthhack/main.dart';
 
+
 class CheckUp2Widget extends StatelessWidget {
 
   @override
@@ -14,6 +15,12 @@ class CheckUp2Widget extends StatelessWidget {
     sleepTrendData.sleepTrend(sleep_data);
     print(sleepTrendData.trend_type);
     print(sleepTrendData.trend_value);
+    int counter = buyTrend(transactions_data);
+
+    ActivityTrendData activityTrendData = new ActivityTrendData();
+    activityTrendData.activityTrend(activity_data);
+    print(activityTrendData.trend_type.toString());
+    print(activityTrendData.trend_value.toString());
 
     return Container(
         constraints: BoxConstraints.expand(),
@@ -135,9 +142,10 @@ class CheckUp2Widget extends StatelessWidget {
                             ),
                             children: <TextSpan>[
                               TextSpan(text: 'Your workout duration has decreased by over '),
-                              TextSpan(text: '50%.',
+                              TextSpan(text: activityTrendData.trend_value.toString()+"%",
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold)),
+                              TextSpan(text: ' in the past 7 days.'),
                             ],
                           ),
                         ),
@@ -149,7 +157,7 @@ class CheckUp2Widget extends StatelessWidget {
             ),
           ),
           Container(
-            height: MediaQuery.of(context).size.height / 10,
+            height: MediaQuery.of(context).size.height / 5,
             margin: EdgeInsets.only(
                 left: MediaQuery.of(context).size.width / 15,
                 right: MediaQuery.of(context).size.width / 15,
@@ -178,7 +186,10 @@ class CheckUp2Widget extends StatelessWidget {
                     children: [
                       Container(
                         margin: EdgeInsets.only(
-                            left: MediaQuery.of(context).size.width / 40),
+                            left: MediaQuery.of(context).size.width / 40,
+                            right: MediaQuery.of(context).size.width / 40,
+                        ),
+
                         alignment: Alignment.center,
                         child: RichText(
                           text: TextSpan(
@@ -193,7 +204,14 @@ class CheckUp2Widget extends StatelessWidget {
                               TextSpan(text: 'consistently unhealthy',
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold)),
-                              TextSpan(text: ' in the past 30 days.'),
+                              TextSpan(text: ' in the past 5 days, you have '),
+                              TextSpan(text: counter.toString(),
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold)),
+                              TextSpan(text: ' purchases in '),
+                              TextSpan(text: 'Fast food and Amusement and bars.',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold)),
                             ],
                           ),
                         ),
