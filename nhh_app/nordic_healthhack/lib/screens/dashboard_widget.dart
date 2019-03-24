@@ -1,5 +1,11 @@
 
 import 'package:flutter/material.dart';
+import 'package:responsive_container/responsive_container.dart';
+import 'package:nordic_healthhack/screens/medical_profile_widget.dart';
+import 'package:nordic_healthhack/screens/appointments_two_widget.dart';
+import 'package:nordic_healthhack/screens/check_ups_widget.dart';
+import 'package:nordic_healthhack/screens/vaccination_main_widget.dart';
+import 'package:nordic_healthhack/screens/precription_main_widget.dart';
 
 
 class DashboardWidget extends StatelessWidget {
@@ -28,6 +34,7 @@ class DashboardWidget extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
+
                         Container(
                           constraints: BoxConstraints.expand(height: 62),
                           decoration: BoxDecoration(
@@ -137,7 +144,14 @@ class DashboardWidget extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.end,
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
-                            Container(
+                            GestureDetector(
+                              onTap: (){
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => MedicalProfileWidget()),
+                                );
+                              },
+                            child: Container(
                               constraints: BoxConstraints.expand(width: 126),
                               margin: EdgeInsets.only(top: 16, right: 31),
                               child: Image.asset(
@@ -145,7 +159,9 @@ class DashboardWidget extends StatelessWidget {
                                 fit: BoxFit.none,
                               ),
                             ),
+                            ),
                           ],
+
                         ),
                       ),
                     ],
@@ -230,7 +246,14 @@ class DashboardWidget extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.end,
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
-                            Container(
+                            GestureDetector(
+                              onTap: (){
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => AppointmentsTwoWidget()),
+                                   );
+                              },
+                            child: Container(
                               constraints: BoxConstraints.expand(width: 126),
                               margin: EdgeInsets.only(top: 25, right: 33),
                               decoration: BoxDecoration(
@@ -247,6 +270,7 @@ class DashboardWidget extends StatelessWidget {
                                 ],
                               ),
                             ),
+                            ),
                           ],
                         ),
                       ),
@@ -255,13 +279,22 @@ class DashboardWidget extends StatelessWidget {
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      Container(
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => CheckUpsWidget()),
+                          );
+                        },
+
+                      child: Container(
                         constraints: BoxConstraints.expand(width: 90),
                         margin: EdgeInsets.only(left: 42, top: 43),
                         child: Image.asset(
                           "assets/images/vitals.png",
                           fit: BoxFit.none,
                         ),
+                      ),
                       ),
                     ],
                   ),
@@ -330,12 +363,21 @@ class DashboardWidget extends StatelessWidget {
                         ),
                         child: Column(
                           children: [
-                            Container(
+                            GestureDetector(
+                              onTap: (){
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => VaccinationMainWidget()),
+                                );
+                              },
+
+                            child: Container(
                               margin: EdgeInsets.only(top: 20),
                               child: Image.asset(
                                 "assets/images/syringe.png",
                                 fit: BoxFit.none,
                               ),
+                            ),
                             ),
                           ],
                         ),
@@ -346,7 +388,14 @@ class DashboardWidget extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.end,
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-                            Container(
+                            GestureDetector(
+                                onTap: (){
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => PrecriptionMainWidget()),
+                                );
+                            },
+                            child: Container(
                               width: 126,
                               height: 126,
                               margin: EdgeInsets.only(right: 30, bottom: 2),
@@ -363,6 +412,7 @@ class DashboardWidget extends StatelessWidget {
                                   ),
                                 ],
                               ),
+                            ),
                             ),
                           ],
                         ),
