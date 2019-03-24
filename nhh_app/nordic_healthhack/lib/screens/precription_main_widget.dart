@@ -1,5 +1,7 @@
 
 import 'package:flutter/material.dart';
+import 'package:nhh_apis/health_api/health_api.dart';
+import 'package:nordic_healthhack/main.dart';
 
 
 class PrecriptionMainWidget extends StatelessWidget {
@@ -225,16 +227,53 @@ class PrecriptionMainWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Container(
-                        margin: EdgeInsets.only(left: 50, top: 54),
-                        child: Text(
-                          "Yasmine\nContraceptive Pill\nPhysician: Dr. Skawínski\nDate of Prescription: 01.08.2018",
-                          style: TextStyle(
-                            color: Color.fromARGB(255, 75, 74, 75),
-                            fontSize: 18,
-                            fontFamily: "Lato",
-                            fontWeight: FontWeight.w500,
+                        margin: EdgeInsets.only(left: 50, top: 65),
+                        child: RichText(
+                          text: TextSpan(
+                            // Note: Styles for TextSpans must be explicitly defined.
+                            // Child text spans will inherit styles from parent
+                            style: TextStyle(
+                              fontSize: MediaQuery.of(context).size.height / 50,
+                              color: Color.fromARGB(255, 75, 74, 75),
+                            ),
+                            children: <TextSpan>[
+                              TextSpan(text: 'Name: ',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold)),
+                              TextSpan(text: healthApi_data.returnData.medicationData[0].name),
+                              TextSpan(text: '\n'),
+                              TextSpan(text: 'Quantity: ',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold)),
+                              TextSpan(text: healthApi_data.returnData.medicationData[0].quantity.toString()),
+                              TextSpan(text: '\n'),
+                              TextSpan(text: 'Strength: ',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold)),
+                              TextSpan(text: healthApi_data.returnData.medicationData[0].strength.toString()+" "+healthApi_data.returnData.medicationData[0].strengthUnit.toString()),
+                              TextSpan(text: '\n'),
+                              TextSpan(text: 'Instructions: ',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold)),
+                              TextSpan(text: healthApi_data.returnData.medicationData[0].instructions.substring(0,22)),
+                              TextSpan(text: '\n'),
+                              TextSpan(text: healthApi_data.returnData
+                                  .medicationData[0].instructions.substring(22,
+                                  healthApi_data.returnData.medicationData[0]
+                                      .instructions.length)),
+                              TextSpan(text: '\n'),
+                              TextSpan(text: 'Prescription ends: ',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold)),
+                              TextSpan(text: healthApi_data
+                                  .returnData
+                                  .medicationData[0]
+                                  .prescriptionEnds
+                                  .substring(0, 10),),
+                              TextSpan(text: '\n'),
+
+                            ],
                           ),
-                          textAlign: TextAlign.left,
                         ),
                       ),
                     ],
