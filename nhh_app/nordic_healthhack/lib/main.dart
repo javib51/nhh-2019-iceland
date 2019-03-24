@@ -19,6 +19,7 @@ import 'package:nhh_apis/arion/model/transactions.dart';
 import 'package:nhh_apis/digime/model/digime_activity_model.dart';
 //import 'package:nhh_apis/digime/model/digime_dailyactivity_model.dart';
 import 'package:nhh_apis/digime/model/digime_sleep_model.dart';
+import 'package:nordic_healthhack/data_algorithms.dart';
 
 HealthApi healthApi_data;
 Transactions transactions_data;
@@ -57,6 +58,7 @@ class App extends StatelessWidget {
       print(res.fileData.length.toString()+"d");
       sleep_data=res;
     });
+
 
     return MaterialApp(
       home: TestsWidget(),

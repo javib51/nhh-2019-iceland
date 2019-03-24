@@ -1,11 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:nordic_healthhack/widgets/app_bar.dart';
 import 'package:nordic_healthhack/widgets/secondary_page.dart';
-
+import 'package:nhh_apis/digime/model/digime_sleep_model.dart';
+import 'package:nordic_healthhack/data_algorithms.dart';
+import 'package:nordic_healthhack/main.dart';
 
 class CheckUp2Widget extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
+
+    SleepTrendData sleepTrendData = new SleepTrendData();
+    sleepTrendData.sleepTrend(sleep_data);
+    print(sleepTrendData.trend_type);
+    print(sleepTrendData.trend_value);
+
     return Container(
         constraints: BoxConstraints.expand(),
         decoration: BoxDecoration(
@@ -70,10 +79,10 @@ class CheckUp2Widget extends StatelessWidget {
                               ),
                               children: <TextSpan>[
                                 TextSpan(text: 'Your sleep duration has reduced by '),
-                                TextSpan(text: '15%',
+                                TextSpan(text: sleepTrendData.trend_value.toString()+"%",
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold)),
-                                TextSpan(text: ' in the past 30 days.'),
+                                TextSpan(text: ' in the past 7 days.'),
                               ],
                             ),
                           ),
