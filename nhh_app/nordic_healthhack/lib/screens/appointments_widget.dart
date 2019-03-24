@@ -7,11 +7,7 @@ class AppointmentsWidget extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    NhhAppBar appBar = NhhAppBar(context, "Appointments", searchFunction: () => print("clicked search button!"),  moreFunction: () => print("clicked more button!"));
-    return Scaffold(
-      appBar: appBar.get(),
-      drawer:  appBar.getDrawer(),
-      body: Container(
+    return Container(
         constraints: BoxConstraints.expand(),
         decoration: BoxDecoration(
           color: Color.fromARGB(255, 255, 255, 255),
@@ -289,7 +285,6 @@ class AppointmentsWidget extends StatelessWidget {
             ),
           ],
         ),
-      ),
     );
   }
 }

@@ -7,10 +7,7 @@ class VaccinationMainWidget extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    NhhAppBar appBar = NhhAppBar(context, "Vaccination", searchFunction: () => print("clicked search button!"), moreFunction: () => print("clicked more button!"));
-    return Scaffold(
-      appBar: appBar.getBack(),
-      body: Container(
+   return Container(
         constraints: BoxConstraints.expand(),
         decoration: BoxDecoration(
           color: Color.fromARGB(255, 255, 255, 255),
@@ -736,19 +733,11 @@ class VaccinationMainWidget extends StatelessWidget {
                     ],
                   ),
                 ),
-                Container(
-                  constraints: BoxConstraints.expand(height: 56),
-                  margin: EdgeInsets.only(bottom: 5),
-                  child: Image.asset(
-                    "assets/images/elements---bottom-navigation---4-items-with-text.png",
-                    fit: BoxFit.cover,
-                  ),
-                ),
+
               ],
             ),
           ],
         ),
-      ),
     );
   }
 }

@@ -7,16 +7,7 @@ class CheckUpsWidget extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    NhhAppBar appBar = NhhAppBar(context, "Check-Ups", searchFunction: () => print("clicked search button!"), moreFunction: () => print("clicked more button!"));
-    return Scaffold(
-      appBar: appBar.get(),
-      drawer:  appBar.getDrawer(),
-      body: Container(
-        constraints: BoxConstraints.expand(),
-        decoration: BoxDecoration(
-          color: Color.fromARGB(255, 255, 255, 255),
-        ),
-        child: Column(
+    return Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Expanded(
@@ -173,8 +164,6 @@ class CheckUpsWidget extends StatelessWidget {
               ),
             ),
           ],
-        ),
-      ),
     );
   }
 }

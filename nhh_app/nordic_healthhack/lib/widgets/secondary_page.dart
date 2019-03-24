@@ -1,27 +1,72 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:nordic_healthhack/screens/appointments_widget.dart';
 import 'package:nordic_healthhack/screens/check_ups_widget.dart';
+import 'package:nordic_healthhack/screens/dashboard_widget.dart';
 import 'package:nordic_healthhack/screens/medical_profile_widget.dart';
 import 'package:nordic_healthhack/screens/precription_main_widget.dart';
 import 'package:nordic_healthhack/screens/vaccination_main_widget.dart';
+import 'package:nordic_healthhack/widgets/app_bar.dart';
 import 'package:nordic_healthhack/widgets/home.dart';
 
-class NhhAppBar {
-  BuildContext context;
-  var title;
-  var menuFunction;
-  var searchFunction;
-  var moreFunction;
+class SecondaryPage extends StatefulWidget {
+  String screen;
+  SecondaryPage(this.screen);
 
-  NhhAppBar(
-      this.context,
-      this.title,
-  {
-    this.searchFunction,
-    this.moreFunction
-  });
+  @override
+  State<StatefulWidget> createState() {
+    return _SecondaryPageState();
+  }
+}
 
+class _SecondaryPageState extends State<SecondaryPage> {
+  int _cIndex = 0;
+  List<String> _title = [
+    "Life Style",
+    "Medical Profile",
+    "Check Ups",
+    "Appointments",
+    "Vaccinations",
+    "Prescription"
+  ];
+  List<Widget> _children = [
+    Container(),
+    MedicalProfileWidget(),
+    CheckUpsWidget(),
+    AppointmentsWidget(),
+    VaccinationMainWidget(),
+    PrecriptionMainWidget()
+  ];
+
+  @override
+  void initState() {
+    super.initState();
+    switch (widget.screen) {
+      case "Life Style":
+        _cIndex=0;
+        break;
+      case "Medical Profile":
+        _cIndex=1;
+        break;
+      case "Check Ups":
+        _cIndex=2;
+        break;
+      case "Appointments":
+        _cIndex=3;
+        break;
+      case "Vaccinations":
+        _cIndex=4;
+        break;
+      case "Prescription":
+        _cIndex=5;
+        break;
+    }
+  }
+
+  void _incrementTab(index) {
+    setState(() {
+      _cIndex = index;
+    });
+  }
   Widget getDrawer() {
     return  new Drawer(
       child: new ListView(
@@ -53,11 +98,11 @@ class NhhAppBar {
                   )
               ),
               title: new Text("Medical Profile"),
-              onTap: (){
+              onTap: () {
                 Navigator.of(context).pop();
                 Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => MedicalProfileWidget()));
+                    MaterialPageRoute(builder: (context) => Home("Medical Profile")));
               }
           ),
           new ListTile(
@@ -73,10 +118,11 @@ class NhhAppBar {
               ),
               title: new Text("Check Ups"),
               onTap: (){
-                Navigator.of(context).pop();
+                 Navigator.of(context).pop();
                 Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => CheckUpsWidget()));
+//                    MaterialPageRoute(builder: (context) => CheckUpsWidget()));
+                    MaterialPageRoute(builder: (context) => Home("Check Ups")));
               }
           ),
           new ListTile(
@@ -93,9 +139,7 @@ class NhhAppBar {
               title: new Text("Appointments"),
               onTap: (){
                 Navigator.of(context).pop();
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => AppointmentsWidget()));
+                _incrementTab(3);
               }
           ),
           new ListTile(
@@ -112,9 +156,7 @@ class NhhAppBar {
               title: new Text("Vaccinations"),
               onTap: (){
                 Navigator.of(context).pop();
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => VaccinationMainWidget()));
+                _incrementTab(4);
               }
           ),
           new ListTile(
@@ -131,9 +173,7 @@ class NhhAppBar {
               title: new Text("Prescription"),
               onTap: (){
                 Navigator.of(context).pop();
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => PrecriptionMainWidget()));
+                _incrementTab(5);
               }
           ),
         ],
@@ -141,55 +181,13 @@ class NhhAppBar {
     );
   }
 
-  AppBar get() {
-    return AppBar(
-      backgroundColor: Color.fromARGB(255, 135, 221, 167),
-      // Here we take the value from the MyHomePage object that was created by
-      // the App.build method, and use it to set our appbar title.
-      title: this.title,
-      leading: Builder(
-        builder: (context) => IconButton(
-          icon: Image.asset(
-            "assets/images/menu.png",
-            fit: BoxFit.none,
-          ),
-          onPressed: () => Scaffold.of(context).openDrawer(),
-        ),
-      ),
-      actions: <Widget>[
-        new IconButton(
-            icon: Image.asset(
-              "assets/images/search-2.png",
-              fit: BoxFit.none,
-            ),
-            onPressed: this.searchFunction
-        ),
-        new IconButton(
-            icon: Image.asset(
-              "assets/images/more.png",
-              fit: BoxFit.none,
-            ),
-            onPressed: this.moreFunction
-        ),
-      ],
-    );
-  }
-
-  AppBar getBack() {
-    return AppBar(
-      backgroundColor: Color.fromARGB(255, 135, 221, 167),
-      // Here we take the value from the MyHomePage object that was created by
-      // the App.build method, and use it to set our appbar title.
-      title: Text(this.title),
-      leading: Builder(
-        builder: (context) => IconButton(
-          icon: Image.asset(
-            "assets/images/back-3.png",
-            fit: BoxFit.none,
-          ),
-          onPressed: () => Navigator.pop(context),
-        ),
-      ),
+  @override
+  Widget build(BuildContext context) {
+    NhhAppBar appBar = NhhAppBar(context, new Text(_title[_cIndex]), searchFunction: () => print("clicked search button!"), moreFunction: () => print("clicked more button!"));
+    return Scaffold(
+      appBar: appBar.get(),
+      drawer:  getDrawer(),
+      body: _children[_cIndex],
     );
   }
 }

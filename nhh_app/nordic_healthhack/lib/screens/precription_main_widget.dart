@@ -7,8 +7,7 @@ class PrecriptionMainWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
   
-    return Scaffold(
-      body: Container(
+    return Container(
         constraints: BoxConstraints.expand(),
         decoration: BoxDecoration(
           color: Color.fromARGB(255, 255, 255, 255),
@@ -16,70 +15,6 @@ class PrecriptionMainWidget extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Container(
-              constraints: BoxConstraints.expand(height: 56),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Container(
-                    constraints: BoxConstraints.expand(height: 56),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Container(
-                          constraints: BoxConstraints.expand(height: 56),
-                          decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 135, 221, 167),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Color.fromARGB(62, 0, 0, 0),
-                                offset: Offset(0, 4),
-                                blurRadius: 4,
-                              ),
-                            ],
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [
-                              Container(
-                                constraints: BoxConstraints.expand(height: 56),
-                                child: Row(
-                                  children: [
-                                    Container(
-                                      margin: EdgeInsets.only(left: 16),
-                                      child: Image.asset(
-                                        "assets/images/back.png",
-                                        fit: BoxFit.none,
-                                      ),
-                                    ),
-                                    Container(
-                                      margin: EdgeInsets.only(left: 32),
-                                      child: Text(
-                                        "Prescriptions",
-                                        style: TextStyle(
-                                          color: Color.fromARGB(255, 255, 255, 255),
-                                          fontSize: 20,
-                                          fontFamily: "Roboto",
-                                          fontWeight: FontWeight.w500,
-                                        ),
-                                        textAlign: TextAlign.left,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
             Container(
               constraints: BoxConstraints.expand(height: 141),
               margin: EdgeInsets.only(left: 18, top: 53, right: 18),
@@ -390,25 +325,8 @@ class PrecriptionMainWidget extends StatelessWidget {
                 ],
               ),
             ),
-            Expanded(
-              flex: 1,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Container(
-                    constraints: BoxConstraints.expand(height: 56),
-                    child: Image.asset(
-                      "assets/images/elements---bottom-navigation---4-items-with-text.png",
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ],
-              ),
-            ),
           ],
         ),
-      ),
     );
   }
 }
