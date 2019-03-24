@@ -1,13 +1,15 @@
 
 import 'package:flutter/material.dart';
+import 'package:nordic_healthhack/widgets/app_bar.dart';
 
 
 class VaccinationMainWidget extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-  
+    NhhAppBar appBar = NhhAppBar(context, "Vaccination", searchFunction: () => print("clicked search button!"), moreFunction: () => print("clicked more button!"));
     return Scaffold(
+      appBar: appBar.getBack(),
       body: Container(
         constraints: BoxConstraints.expand(),
         decoration: BoxDecoration(
@@ -19,70 +21,6 @@ class VaccinationMainWidget extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Container(
-                  constraints: BoxConstraints.expand(height: 56),
-                  margin: EdgeInsets.only(top: 23),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Container(
-                        constraints: BoxConstraints.expand(height: 56),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: [
-                            Container(
-                              constraints: BoxConstraints.expand(height: 56),
-                              decoration: BoxDecoration(
-                                color: Color.fromARGB(255, 135, 221, 167),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Color.fromARGB(62, 0, 0, 0),
-                                    offset: Offset(0, 4),
-                                    blurRadius: 4,
-                                  ),
-                                ],
-                              ),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.stretch,
-                                children: [
-                                  Container(
-                                    constraints: BoxConstraints.expand(height: 56),
-                                    child: Row(
-                                      children: [
-                                        Container(
-                                          margin: EdgeInsets.only(left: 16),
-                                          child: Image.asset(
-                                            "assets/images/back-3.png",
-                                            fit: BoxFit.none,
-                                          ),
-                                        ),
-                                        Container(
-                                          margin: EdgeInsets.only(left: 32),
-                                          child: Text(
-                                            "Vaccination",
-                                            style: TextStyle(
-                                              color: Color.fromARGB(255, 255, 255, 255),
-                                              fontSize: 20,
-                                              fontFamily: "Roboto",
-                                              fontWeight: FontWeight.w500,
-                                            ),
-                                            textAlign: TextAlign.left,
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
                 Container(
                   constraints: BoxConstraints.expand(height: 141),
                   margin: EdgeInsets.only(left: 18, top: 20, right: 18),
