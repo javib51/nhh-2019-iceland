@@ -5,6 +5,7 @@ import 'package:nordic_healthhack/screens/dashboard_welcome_widget.dart';
 import 'package:nordic_healthhack/screens/dashboard_widget.dart';
 import 'package:nordic_healthhack/screens/medical_profile_widget.dart';
 import 'package:nordic_healthhack/screens/precription_main_widget.dart';
+import 'package:nordic_healthhack/screens/settings.dart';
 import 'package:nordic_healthhack/screens/vaccination_main_widget.dart';
 import 'package:nordic_healthhack/widgets/app_bar.dart';
 import 'package:nordic_healthhack/widgets/secondary_page.dart';
@@ -30,7 +31,7 @@ class _HomeState extends State<Home> {
     DashboardWidget(),
     MedicalProfileWidget(),
     DashboardWelcomeWidget(),
-    Container()
+    Settings()
   ];
 
   @override
