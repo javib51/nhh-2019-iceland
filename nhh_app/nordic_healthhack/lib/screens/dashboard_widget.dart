@@ -1,13 +1,22 @@
 
 import 'package:flutter/material.dart';
+import 'package:nordic_healthhack/widgets/app_bar.dart';
+import 'package:responsive_container/responsive_container.dart';
+import 'package:nordic_healthhack/screens/medical_profile_widget.dart';
+import 'package:nordic_healthhack/screens/appointments_two_widget.dart';
+import 'package:nordic_healthhack/screens/check_ups_widget.dart';
+import 'package:nordic_healthhack/screens/vaccination_main_widget.dart';
+import 'package:nordic_healthhack/screens/precription_main_widget.dart';
 
 
 class DashboardWidget extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-  
+    NhhAppBar appBar = NhhAppBar(context, "Dashboard", searchFunction: () => print("clicked search button!"), moreFunction: () => print("clicked more button!"));
     return Scaffold(
+      appBar: appBar.get(),
+      drawer:  appBar.getDrawer(),
       body: Container(
         constraints: BoxConstraints.expand(),
         decoration: BoxDecoration(
@@ -16,106 +25,6 @@ class DashboardWidget extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Container(
-              constraints: BoxConstraints.expand(height: 62),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Container(
-                    constraints: BoxConstraints.expand(height: 62),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                      children: [
-                        Container(
-                          constraints: BoxConstraints.expand(height: 62),
-                          decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 135, 221, 167),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Color.fromARGB(62, 0, 0, 0),
-                                offset: Offset(0, 4),
-                                blurRadius: 4,
-                              ),
-                            ],
-                          ),
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [
-                              SizedBox(
-                                width: 16,
-                              ),
-                              Expanded(
-                                flex: 1,
-                                child: Container(
-                                  height: 24,
-                                  margin: EdgeInsets.only(top: 22),
-                                  child: Image.asset(
-                                    "assets/images/menu.png",
-                                    fit: BoxFit.none,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 32,
-                              ),
-                              Expanded(
-                                flex: 1,
-                                child: Container(
-                                  margin: EdgeInsets.only(top: 23),
-                                  child: Text(
-                                    "Dashboard",
-                                    style: TextStyle(
-                                      color: Color.fromARGB(255, 255, 255, 255),
-                                      fontSize: 20,
-                                      fontFamily: "Roboto",
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                    textAlign: TextAlign.left,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 123,
-                              ),
-                              Expanded(
-                                flex: 1,
-                                child: Container(
-                                  height: 24,
-                                  margin: EdgeInsets.only(top: 22),
-                                  child: Image.asset(
-                                    "assets/images/search.png",
-                                    fit: BoxFit.none,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 16,
-                              ),
-                              Expanded(
-                                flex: 1,
-                                child: Container(
-                                  height: 24,
-                                  margin: EdgeInsets.only(top: 22),
-                                  child: Image.asset(
-                                    "assets/images/more.png",
-                                    fit: BoxFit.none,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 16,
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
             Expanded(
               flex: 1,
               child: Stack(
@@ -137,7 +46,14 @@ class DashboardWidget extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.end,
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
-                            Container(
+                            GestureDetector(
+                              onTap: (){
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => MedicalProfileWidget()),
+                                );
+                              },
+                            child: Container(
                               constraints: BoxConstraints.expand(width: 126),
                               margin: EdgeInsets.only(top: 16, right: 31),
                               child: Image.asset(
@@ -145,7 +61,9 @@ class DashboardWidget extends StatelessWidget {
                                 fit: BoxFit.none,
                               ),
                             ),
+                            ),
                           ],
+
                         ),
                       ),
                     ],
@@ -230,7 +148,14 @@ class DashboardWidget extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.end,
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
-                            Container(
+                            GestureDetector(
+                              onTap: (){
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => AppointmentsTwoWidget()),
+                                   );
+                              },
+                            child: Container(
                               constraints: BoxConstraints.expand(width: 126),
                               margin: EdgeInsets.only(top: 25, right: 33),
                               decoration: BoxDecoration(
@@ -247,6 +172,7 @@ class DashboardWidget extends StatelessWidget {
                                 ],
                               ),
                             ),
+                            ),
                           ],
                         ),
                       ),
@@ -255,13 +181,22 @@ class DashboardWidget extends StatelessWidget {
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
-                      Container(
+                      GestureDetector(
+                        onTap: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => CheckUpsWidget()),
+                          );
+                        },
+
+                      child: Container(
                         constraints: BoxConstraints.expand(width: 90),
                         margin: EdgeInsets.only(left: 42, top: 43),
                         child: Image.asset(
                           "assets/images/vitals.png",
                           fit: BoxFit.none,
                         ),
+                      ),
                       ),
                     ],
                   ),
@@ -330,12 +265,21 @@ class DashboardWidget extends StatelessWidget {
                         ),
                         child: Column(
                           children: [
-                            Container(
+                            GestureDetector(
+                              onTap: (){
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => VaccinationMainWidget()),
+                                );
+                              },
+
+                            child: Container(
                               margin: EdgeInsets.only(top: 20),
                               child: Image.asset(
                                 "assets/images/syringe.png",
                                 fit: BoxFit.none,
                               ),
+                            ),
                             ),
                           ],
                         ),
@@ -346,7 +290,14 @@ class DashboardWidget extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.end,
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: [
-                            Container(
+                            GestureDetector(
+                                onTap: (){
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => PrecriptionMainWidget()),
+                                );
+                            },
+                            child: Container(
                               width: 126,
                               height: 126,
                               margin: EdgeInsets.only(right: 30, bottom: 2),
@@ -363,6 +314,7 @@ class DashboardWidget extends StatelessWidget {
                                   ),
                                 ],
                               ),
+                            ),
                             ),
                           ],
                         ),

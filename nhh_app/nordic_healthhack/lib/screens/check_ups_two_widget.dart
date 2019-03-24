@@ -7,9 +7,10 @@ class CheckUpsTwoWidget extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    NhhAppBar appBar = NhhAppBar("Check-Ups", searchFunction: () => print("clicked search button!"), menuFunction: () => print("clicked menu button!"),  moreFunction: () => print("clicked more button!"));
+    NhhAppBar appBar = NhhAppBar(context, "Check-Ups", searchFunction: () => print("clicked search button!"), moreFunction: () => print("clicked more button!"));
     return Scaffold(
       appBar: appBar.get(),
+      drawer:  appBar.getDrawer(),
       body: Container(
         constraints: BoxConstraints.expand(),
         decoration: BoxDecoration(
