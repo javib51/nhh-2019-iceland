@@ -10,6 +10,7 @@ class BookAppWidget extends StatelessWidget {
     NhhAppBar appBar = NhhAppBar(context, "Book Appointment", searchFunction: () => print("clicked search button!"),  moreFunction: () => print("clicked more button!"));
     return Scaffold(
       appBar: appBar.get(),
+      drawer:  appBar.getDrawer(),
       body: Container(
         constraints: BoxConstraints.expand(),
         decoration: BoxDecoration(

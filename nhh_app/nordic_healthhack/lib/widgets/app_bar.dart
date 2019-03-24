@@ -132,7 +132,7 @@ class NhhAppBar {
             "assets/images/back-3.png",
             fit: BoxFit.none,
           ),
-          onPressed: () => Scaffold.of(context).openDrawer(),
+          onPressed: () => Navigator.pop(context),
         ),
       ),
     );
