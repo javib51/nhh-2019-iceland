@@ -44,14 +44,10 @@ class VaccinationMainWidget extends StatelessWidget {
             ),
 
             Container(
-//              margin: EdgeInsets.only(
-//                  left: MediaQuery.of(context).size.width / 30,
-//                  right: MediaQuery.of(context).size.width / 30,
-//                  top: MediaQuery.of(context).size.height / 50),
               child: Text(
                 "Your recent lifestyle changes have indicated you might be at risk.",
                 style: TextStyle(
-                  color: Color.fromARGB(255, 75, 74, 75
+                  color: Color.fromARGB(255, 75, 74, 75),
                   fontSize: 18,
                   fontFamily: "Lato",
                 ),
