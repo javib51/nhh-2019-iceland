@@ -80,7 +80,7 @@ class VaccinationMainWidget extends StatelessWidget {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => SecondaryPage("Appointments")),
+                                      builder: (context) => SecondaryPage("Vaccination Read More")),
                                 );
                               },
                               child: Container(
@@ -109,7 +109,15 @@ class VaccinationMainWidget extends StatelessWidget {
                                   textAlign: TextAlign.center,
                                 ),
                               )),
-                          Container(
+                          GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => SecondaryPage("Appointments")),
+                              );
+                            },
+                            child: Container(
                             width: MediaQuery.of(context).size.width / 3,
                             height: MediaQuery.of(context).size.height / 15,
                             alignment: Alignment.center,
@@ -124,6 +132,7 @@ class VaccinationMainWidget extends StatelessWidget {
                               ],
                               borderRadius: BorderRadius.all(Radius.circular(2)),
                             ),
+
                             child: Text(
                               "Book Appointment",
                               style: TextStyle(
@@ -134,14 +143,17 @@ class VaccinationMainWidget extends StatelessWidget {
                               ),
                               textAlign: TextAlign.center,
                             ),
-                          ),
+                          )),
                         ],
                       ),
                     ],
                   )),
               Container(
                 constraints: BoxConstraints.expand(height: 175),
-                margin: EdgeInsets.only(left: 18, top: 22, right: 18),
+                margin: EdgeInsets.only(
+                    left: MediaQuery.of(context).size.width / 20,
+                    top: MediaQuery.of(context).size.height / 20,
+                    right: MediaQuery.of(context).size.width / 20),
                 child: Stack(
                   fit: StackFit.expand,
                   children: [
@@ -170,8 +182,8 @@ class VaccinationMainWidget extends StatelessWidget {
                                   Expanded(
                                     flex: 1,
                                     child: Container(
-                                      height: 115,
-                                      margin: EdgeInsets.only(top: 10),
+                                      height: MediaQuery.of(context).size.height / 60,
+                                      margin: EdgeInsets.only(top: MediaQuery.of(context).size.height / 60),
                                       decoration: BoxDecoration(
                                         color: Color.fromARGB(255, 216, 216, 216),
                                         border: Border.all(
@@ -194,7 +206,9 @@ class VaccinationMainWidget extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.stretch,
                                 children: [
                                   Container(
-                                    margin: EdgeInsets.only(left: 13, top: 25),
+                                    margin: EdgeInsets.only(
+                                        left: MediaQuery.of(context).size.width / 20,
+                                        top: MediaQuery.of(context).size.height / 30),
                                     child: Text(
                                       "Shingles",
                                       style: TextStyle(
@@ -225,8 +239,8 @@ class VaccinationMainWidget extends StatelessWidget {
                                   Expanded(
                                     flex: 1,
                                     child: Container(
-                                      height: 50,
-                                      margin: EdgeInsets.only(bottom: 10),
+                                      height: MediaQuery.of(context).size.height / 15,
+                                      margin: EdgeInsets.only(bottom: MediaQuery.of(context).size.height / 80),
                                       decoration: BoxDecoration(
                                         color: Color.fromARGB(255, 68, 70, 69),
                                         boxShadow: [
@@ -242,7 +256,7 @@ class VaccinationMainWidget extends StatelessWidget {
                                         crossAxisAlignment: CrossAxisAlignment.stretch,
                                         children: [
                                           Container(
-                                            margin: EdgeInsets.only(top: 15),
+                                            margin: EdgeInsets.only(top: MediaQuery.of(context).size.height / 60),
                                             child: Text(
                                               "Read More",
                                               style: TextStyle(
@@ -259,13 +273,13 @@ class VaccinationMainWidget extends StatelessWidget {
                                     ),
                                   ),
                                   SizedBox(
-                                    width: 18,
+                                    width: MediaQuery.of(context).size.height / 60,
                                   ),
                                   Expanded(
                                     flex: 1,
                                     child: Container(
-                                      height: 50,
-                                      margin: EdgeInsets.only(bottom: 10),
+                                      height: MediaQuery.of(context).size.height / 15,
+                                      margin: EdgeInsets.only(bottom: MediaQuery.of(context).size.height / 80),
                                       decoration: BoxDecoration(
                                         color: Color.fromARGB(255, 68, 70, 69),
                                         boxShadow: [
@@ -281,7 +295,7 @@ class VaccinationMainWidget extends StatelessWidget {
                                         crossAxisAlignment: CrossAxisAlignment.stretch,
                                         children: [
                                           Container(
-                                            margin: EdgeInsets.only(top: 20),
+                                            margin: EdgeInsets.only(top: MediaQuery.of(context).size.height / 40),
                                             child: Text(
                                               "Book Appointment",
                                               style: TextStyle(
@@ -312,7 +326,9 @@ class VaccinationMainWidget extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         Container(
-                          margin: EdgeInsets.only(bottom: 13, left: 13),
+                          margin: EdgeInsets.only(
+                              bottom: MediaQuery.of(context).size.height / 40,
+                              left: MediaQuery.of(context).size.width / 20),
                           child: Text(
                             "Due in 6 Months",
                             style: TextStyle(
@@ -330,8 +346,8 @@ class VaccinationMainWidget extends StatelessWidget {
                 ),
               ),
               Container(
-                constraints: BoxConstraints.expand(height: 147),
-                margin: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+                constraints: BoxConstraints.expand(height: MediaQuery.of(context).size.height / 5),
+                margin: EdgeInsets.symmetric(vertical: MediaQuery.of(context).size.height / 20, horizontal: MediaQuery.of(context).size.height / 40),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
@@ -350,98 +366,110 @@ class VaccinationMainWidget extends StatelessWidget {
                     ),
                     Expanded(
                       flex: 1,
-                      child: Stack(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: [
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [
-                              Expanded(
-                                flex: 1,
-                                child: Container(
-                                  height: 49,
-                                  margin: EdgeInsets.only(top: 10, bottom: 5),
-                                  decoration: BoxDecoration(
-                                    color: Color.fromARGB(255, 216, 216, 216),
-                                    border: Border.all(
-                                      color: Color.fromARGB(255, 216, 216, 216),
-                                      width: 1,
-                                    ),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Color.fromARGB(128, 0, 0, 0),
-                                        offset: Offset(0, 2),
-                                        blurRadius: 4,
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [
-                              SizedBox(
-                                width: 16,
-                              ),
-                              Expanded(
-                                flex: 1,
-                                child: Container(
-                                  margin: EdgeInsets.only(top: 25),
-                                  child: Text(
-                                    "Influenza",
-                                    style: TextStyle(
-                                      color: Color.fromARGB(255, 75, 74, 75),
-                                      fontSize: 16,
-                                      fontFamily: "Open Sans",
-                                    ),
-                                    textAlign: TextAlign.left,
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 145,
-                              ),
-                              Expanded(
-                                flex: 1,
-                                child: Container(
-                                  height: 36,
-                                  margin: EdgeInsets.only(top:16, bottom: 10),
-                                  decoration: BoxDecoration(
-                                    color: Color.fromARGB(255, 68, 70, 69),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Color.fromARGB(62, 0, 0, 0),
-                                        offset: Offset(0, 2),
-                                        blurRadius: 2,
-                                      ),
-                                    ],
-                                    borderRadius: BorderRadius.all(Radius.circular(2)),
-                                  ),
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                                    children: [
-                                      Container(
-                                        margin: EdgeInsets.only(top: 10),
-                                        child: Text(
-                                          "View",
-                                          style: TextStyle(
-                                            color: Color.fromARGB(255, 255, 255, 255),
-                                            fontSize: 14,
-                                            letterSpacing: 0.5,
-                                            fontFamily: "Open Sans",
+                          Expanded(
+                            flex: 1,
+                            child: Stack(
+                              children: [
+                                Row(
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: [
+                                    Expanded(
+                                      flex: 1,
+                                      child: Container(
+                                        height: MediaQuery.of(context).size.height / 10,
+                                        margin: EdgeInsets.only(
+                                            top: MediaQuery.of(context).size.height / 60,
+                                            bottom: MediaQuery.of(context).size.height / 200),
+                                        decoration: BoxDecoration(
+                                          color: Color.fromARGB(255, 216, 216, 216),
+                                          border: Border.all(
+                                            color: Color.fromARGB(255, 216, 216, 216),
+                                            width: 1,
                                           ),
-                                          textAlign: TextAlign.center,
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color: Color.fromARGB(128, 0, 0, 0),
+                                              offset: Offset(0, 2),
+                                              blurRadius: 4,
+                                            ),
+                                          ],
                                         ),
                                       ),
-                                    ],
-                                  ),
+                                    ),
+                                  ],
                                 ),
-                              ),
-                              SizedBox(
-                                width: 12,
-                              ),
-                            ],
+                                Row(
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  children: [
+                                    SizedBox(
+                                      width: MediaQuery.of(context).size.height / 60,
+                                    ),
+                                    Expanded(
+                                      flex: 1,
+                                      child: Container(
+                                        margin: EdgeInsets.only(bottom: MediaQuery.of(context).size.height / 40),
+                                        child: Text(
+                                          "Influenza",
+                                          style: TextStyle(
+                                            color: Color.fromARGB(255, 75, 74, 75),
+                                            fontSize: 16,
+                                            fontFamily: "Open Sans",
+                                          ),
+                                          textAlign: TextAlign.left,
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: MediaQuery.of(context).size.height / 5,
+                                    ),
+                                    Expanded(
+                                      flex: 1,
+                                      child: Container(
+                                        height: 36,
+                                        margin: EdgeInsets.only(top:MediaQuery.of(context).size.height / 40,
+                                            bottom: MediaQuery.of(context).size.height / 60),
+                                        decoration: BoxDecoration(
+                                          color: Color.fromARGB(255, 68, 70, 69),
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color: Color.fromARGB(62, 0, 0, 0),
+                                              offset: Offset(0, 2),
+                                              blurRadius: 2,
+                                            ),
+                                          ],
+                                          borderRadius: BorderRadius.all(Radius.circular(2)),
+                                        ),
+                                        child: Column(
+                                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                                          children: [
+                                            Container(
+                                              margin: EdgeInsets.only(top: MediaQuery.of(context).size.height / 60),
+                                              child: Text(
+                                                "View",
+                                                style: TextStyle(
+                                                  color: Color.fromARGB(255, 255, 255, 255),
+                                                  fontSize: 14,
+                                                  letterSpacing: 0.5,
+                                                  fontFamily: "Open Sans",
+                                                ),
+                                                textAlign: TextAlign.center,
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: MediaQuery.of(context).size.height / 60,
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       ),
@@ -462,39 +490,13 @@ class VaccinationMainWidget extends StatelessWidget {
                                     Expanded(
                                       flex: 1,
                                       child: Container(
-                                        height: 49,
-                                        margin: EdgeInsets.only(bottom: 2),
+                                        height: MediaQuery.of(context).size.height / 16,
+                                        margin: EdgeInsets.only(bottom: MediaQuery.of(context).size.height / 200),
                                         decoration: BoxDecoration(
                                           color: Color.fromARGB(255, 216, 216, 216),
                                           border: Border.all(
                                             color: Color.fromARGB(255, 216, 216, 216),
-                                            width: 1,
-                                          ),
-                                          boxShadow: [
-                                            BoxShadow(
-                                              color: Color.fromARGB(128, 0, 0, 0),
-                                              offset: Offset(0, 2),
-                                              blurRadius: 4,
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                Row(
-                                  crossAxisAlignment: CrossAxisAlignment.end,
-                                  children: [
-                                    Expanded(
-                                      flex: 1,
-                                      child: Container(
-                                        height: 49,
-                                        margin: EdgeInsets.only(bottom: 2),
-                                        decoration: BoxDecoration(
-                                          color: Color.fromARGB(255, 216, 216, 216),
-                                          border: Border.all(
-                                            color: Color.fromARGB(255, 216, 216, 216),
-                                            width: 1,
+                                            width: MediaQuery.of(context).size.height / 150,
                                           ),
                                           boxShadow: [
                                             BoxShadow(
@@ -512,12 +514,12 @@ class VaccinationMainWidget extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.end,
                                   children: [
                                     SizedBox(
-                                      width: 16,
+                                      width: MediaQuery.of(context).size.height / 60,
                                     ),
                                     Expanded(
                                       flex: 1,
                                       child: Container(
-                                        margin: EdgeInsets.only(bottom: 20),
+                                        margin: EdgeInsets.only(bottom: MediaQuery.of(context).size.height / 40),
                                         child: Text(
                                           "Tdap",
                                           style: TextStyle(
@@ -530,13 +532,14 @@ class VaccinationMainWidget extends StatelessWidget {
                                       ),
                                     ),
                                     SizedBox(
-                                      width: 145,
+                                      width: MediaQuery.of(context).size.height / 5,
                                     ),
                                     Expanded(
                                       flex: 1,
                                       child: Container(
-                                        height: 36,
-                                        margin: EdgeInsets.only(top:6, bottom: 10),
+                                        height: MediaQuery.of(context).size.height / 22,
+                                        margin: EdgeInsets.only(top:MediaQuery.of(context).size.height / 150,
+                                            bottom: MediaQuery.of(context).size.height / 60),
                                         decoration: BoxDecoration(
                                           color: Color.fromARGB(255, 68, 70, 69),
                                           boxShadow: [
@@ -552,7 +555,7 @@ class VaccinationMainWidget extends StatelessWidget {
                                           crossAxisAlignment: CrossAxisAlignment.stretch,
                                           children: [
                                             Container(
-                                              margin: EdgeInsets.only(top: 12),
+                                              margin: EdgeInsets.only(top: MediaQuery.of(context).size.height / 60),
                                               child: Text(
                                                 "View",
                                                 style: TextStyle(
