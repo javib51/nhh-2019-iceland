@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:nordic_healthhack/screens/appointments_two_widget.dart';
 import 'package:nordic_healthhack/screens/appointments_widget.dart';
+import 'package:nordic_healthhack/screens/check_up2_widget.dart';
 import 'package:nordic_healthhack/screens/check_ups_widget.dart';
 import 'package:nordic_healthhack/screens/dashboard_widget.dart';
 import 'package:nordic_healthhack/screens/medical_profile_widget.dart';
@@ -26,15 +28,17 @@ class _SecondaryPageState extends State<SecondaryPage> {
     "Check Ups",
     "Appointments",
     "Vaccinations",
-    "Prescription"
+    "Prescription",
+    "Check Ups 2",
   ];
   List<Widget> _children = [
     Container(),
     MedicalProfileWidget(),
     CheckUpsWidget(),
-    AppointmentsWidget(),
+    AppointmentsTwoWidget(),
     VaccinationMainWidget(),
-    PrecriptionMainWidget()
+    PrecriptionMainWidget(),
+    CheckUp2Widget()
   ];
 
   @override
@@ -58,6 +62,9 @@ class _SecondaryPageState extends State<SecondaryPage> {
         break;
       case "Prescription":
         _cIndex=5;
+        break;
+      case "Check Ups 2":
+        _cIndex=6;
         break;
     }
   }

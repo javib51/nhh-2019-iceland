@@ -6,6 +6,8 @@ import 'package:nordic_healthhack/screens/medical_profile_widget.dart';
 import 'package:nordic_healthhack/screens/precription_main_widget.dart';
 import 'package:nordic_healthhack/screens/vaccination_main_widget.dart';
 import 'package:nordic_healthhack/widgets/app_bar.dart';
+import 'package:nordic_healthhack/widgets/home.dart';
+import 'package:nordic_healthhack/widgets/secondary_page.dart';
 
 class DashboardWidget extends StatefulWidget {
 
@@ -154,7 +156,7 @@ class DashboardWidgetState extends State<DashboardWidget> {
                               onTap: (){
                                 Navigator.push(
                                   context,
-                                  MaterialPageRoute(builder: (context) => AppointmentsTwoWidget()),
+                                  MaterialPageRoute(builder: (context) => SecondaryPage("Appointments")),
                                    );
                               },
                             child: Container(
@@ -187,7 +189,7 @@ class DashboardWidgetState extends State<DashboardWidget> {
                         onTap: (){
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => CheckUpsWidget()),
+                            MaterialPageRoute(builder: (context) => Home("Check Ups")),
                           );
                         },
 
