@@ -11,7 +11,7 @@ class MedicalProfileWidget extends StatelessWidget {
       body: Stack(
         children: <Widget>[
           Container(
-
+            margin: EdgeInsets.only(top: MediaQuery.of(context).size.height / 40),
             decoration: BoxDecoration(
 
               image: DecorationImage(
@@ -22,7 +22,7 @@ class MedicalProfileWidget extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 150,
+            top: MediaQuery.of(context).size.width / 2.5,
             left: 10.0,
             right: 10.0,
             child: Card(
